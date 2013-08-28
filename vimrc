@@ -72,9 +72,7 @@ inoremap <Leader><Leader> <Esc>:w<CR>
 nnoremap <Leader>c          :close<CR>
 inoremap <Leader>c     <Esc>:close<CR>
 
-"" Buffer nav. \b to list, \B to goto
-nnoremap <Leader>b          :BufExplorerVerticalSplit<CR>
-inoremap <Leader>b     <Esc>:BufExplorerVerticalSplit<CR>
+nnoremap ll          :ls<CR> 
 
 " Quick <esc> alternative
 imap jj <Esc>
@@ -122,3 +120,10 @@ autocmd vimenter * if !argc() | NERDTree | endif
 
 " Close nerd if it's all that's left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" CtrlP
+nnoremap <C-p> :CtrlPMRU<CR>
+inoremap <C-p> <Esc>:CtrlPMRU<CR>
+
+" Run in
+nnoremap <Leader>rb :!bash %<CR>
