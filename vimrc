@@ -2,6 +2,9 @@
 """ dottru/dotfiles vimrc
 """
 
+# Load pathogen
+execute pathogen#infect()
+
 "" show line numbers, indent like a decent citizen, tabstop of 4
 set number
 
@@ -20,7 +23,7 @@ inoremap <Leader><Space> <Esc>:w<CR>:
 
 "" vim specific shortcuts
  " \v to :w & :e $vimrc
-nnoremap <Leader>v :w<CR>:e ~/.vimrc<CR>
+nnoremap <Leader>v :e ~/.vimrc<CR>
  " \r to reload $vimrc
 nnoremap <Leader>r :source ~/.vimrc<CR>:echo ".vimrc reloaded"<CR>
 
@@ -48,5 +51,7 @@ nnoremap <Leader><Leader> :w<CR>
 inoremap <Leader><Leader> <Esc>:w<CR>a
 
 "" Appearance 
-"colorscheme solarized " TODO: install solarized
+colorscheme solarized 
 set background=dark
+syntax on
+filetype plugin indent on
