@@ -23,6 +23,9 @@ set autoindent
 set ts=4
 set expandtab
 
+" show cmds as you type em
+set showcmd
+
 "" <Space> to : mappings
 nnoremap <Space>         :
 nnoremap <Leader><Space> :
@@ -141,4 +144,6 @@ map <F10> :call Commit()<CR>
 imap <F10> <C-O>:call Commit()<CR>
 
 " Added an auto-commit to buffer saves
-autocmd BufWritePost * execute '!git add % && git commit -m %'
+" autocmd BufWritePost * execute '!git add % && git commit -m %'
+
+
