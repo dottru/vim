@@ -47,6 +47,10 @@ inoremap <Leader>w <Esc>:w<CR>a
 nnoremap <Leader>s <Esc>:w<CR>
 inoremap <Leader>s <Esc>:w<CR>a
 
+""  Sometimes a nigga's gotta quit
+nnoremap <Leader>q      :q!
+inoremap QQ        <Esc>:q!
+
 nnoremap <Leader><Leader> :w<CR>
 inoremap <Leader><Leader> <Esc>:w<CR>a
 
