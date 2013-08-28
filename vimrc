@@ -91,6 +91,7 @@ let g:netrw_home=$HOME
 " GIT SHORTCUTS
 nnoremap <Leader><Leader>s     :!git status<CR>
 nnoremap <Leader><Leader>a     :!git add %<CR>
+nnoremap <Leader><Leader>c     :!git commit -a<CR>
 
 " \h shortcuts to :help 
 nnoremap <Leader>h               :help 
@@ -99,9 +100,5 @@ inoremap <Leader>h          <Esc>:help
 " Tab completion for tards
 inoremap <Tab>      <C-p>
 
-
-" Buf movement
-" nnoremap <Leader>[      :MBEbf<CR>
-" nnoremap <Leader>]      :MBEbb<CR>
-
+" \e == Fie explorer
 nnoremap <Leader>e      :Ex<CR>
