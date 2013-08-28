@@ -140,3 +140,5 @@ endfunction
 map <F10> :call Commit()<CR>
 imap <F10> <C-O>:call Commit()<CR>
 
+" Added an auto-commit to buffer saves
+autocmd BufWritePost * execute '!git add % && git commit -m %'
