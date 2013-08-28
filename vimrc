@@ -3,6 +3,7 @@
 """
 
 # Load pathogen
+runtime bundle/pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
 "" show line numbers, indent like a decent citizen, tabstop of 4

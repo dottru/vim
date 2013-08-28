@@ -3,12 +3,12 @@
 # init git modules
 git submodule init
 
-# sym vim dir
-VI=~/.vim;
-rm -rf $VI;
-ln -s ../vim $VI;
+# Linker
+function Sym () { rm -rf $2; ln -s $1 $2; }
 
-# sym vimrc
-RC=~/.vimrc;
-rm -rf $RC;
-ln -s ./vimrc $RC;
+# conf directories
+VI=~/.vim; RC=~/.vimrc;
+VIM=`pwd`;
+
+Sym "$VIM" "$VI";
+Sym "$VIM/vimrc" "$RC";
