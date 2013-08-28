@@ -130,11 +130,12 @@ nnoremap <Leader>rb :!bash %<CR>
 set encoding=utf-8
 let g:airline_powerline_fonts=1
 
+" Bind F9 to show `pwd`
 map <F9> :!pwd<CR>
 
 " Binds F10 to git commit -a
 function! Commit()
-        :!git commit -a
+        :!git commit -a; git push origin master
 endfunction
 map <F10> :call Commit()<CR>
 imap <F10> <C-O>:call Commit()<CR>
