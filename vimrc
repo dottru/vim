@@ -117,4 +117,8 @@ nnoremap <Leader>0 :b10<CR>
 " mini buf expl auto start
 let g:miniBufExplAutoStart = 1
 
-autocmd vimenter * NERDTree
+" Open nerd automatically
+autocmd vimenter * if !argc() | NERDTree | endif
+
+" Close nerd if it's all that's left
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
