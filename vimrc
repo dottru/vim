@@ -45,6 +45,9 @@ inoremap <C-j> <C-w>j
 inoremap <C-k> <C-w>k
 inoremap <C-l> <C-w>l
 
+" NERDTree toggle
+nnoremap <Leader>e :NERDTreeToggle<CR>
+
 "" Save shortcuts
  " \w for save, \wq for savequit
 nnoremap <Leader>w <Esc>:w<CR>
@@ -99,6 +102,7 @@ inoremap <Leader>h          <Esc>:help
 " Tab completion for tards
 inoremap <Tab>      <C-p>
 
+" Buffer navigation
 nnoremap <Leader>1 :b1<CR>
 nnoremap <Leader>2 :b2<CR>
 nnoremap <Leader>3 :b3<CR>
@@ -110,10 +114,7 @@ nnoremap <Leader>8 :b8<CR>
 nnoremap <Leader>9 :b9<CR>
 nnoremap <Leader>0 :b10<CR>
 
-" Buf movement
-" nnoremap <Leader>[      :MBEbf<CR>
-" nnoremap <Leader>]      :MBEbb<CR>
-nnoremap <Leader>e      :Ex<CR>
-
 " mini buf expl auto start
 let g:miniBufExplAutoStart = 1
+
+autocmd vimenter * NERDTree
