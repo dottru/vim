@@ -66,19 +66,20 @@ inoremap <Leader>s <Esc>:w<CR>a
 nnoremap <Leader>q      :q!
 inoremap QQ        <Esc>:q!
 
+" <Leader><Leader> just quicksaves and exits insert mode
 nnoremap <Leader><Leader> :w<CR>
 inoremap <Leader><Leader> <Esc>:w<CR>
 
+" <Leader>c c-- closes buffer
 nnoremap <Leader>c          :close<CR>
 inoremap <Leader>c     <Esc>:close<CR>
-
-nnoremap ll          :ls<CR> 
 
 " Quick <esc> alternative
 imap jj <Esc>
 
 " Shorten the shortcut timeout a bit
-set timeout timeoutlen=500 ttimeoutlen=500
+" If it's still too long, drop it down to 500
+set timeout timeoutlen=700 ttimeoutlen=700
 
 "" Appearance 
 colorscheme solarized 
@@ -96,9 +97,6 @@ nnoremap <Leader><Leader>a     :!git add %<CR>
 " \h shortcuts to :help 
 nnoremap <Leader>h               :help 
 inoremap <Leader>h          <Esc>:help 
-
-" Tab completion for tards
-inoremap <Tab>      <C-p>
 
 " Buffer navigation
 nnoremap <Leader>1 :b1<CR>
@@ -127,3 +125,17 @@ inoremap <C-p> <Esc>:CtrlPMRU<CR>
 
 " Run in
 nnoremap <Leader>rb :!bash %<CR>
+
+" Powerline settings
+set encoding=utf-8
+let g:airline_powerline_fonts=1
+
+map <F9> :!pwd<CR>
+
+" Binds F10 to git commit -a
+function! Commit()
+        :!git commit -a
+endfunction
+map <F10> :call Commit()<CR>
+imap <F10> <C-O>:call Commit()<CR>
+

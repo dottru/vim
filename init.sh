@@ -1,9 +1,17 @@
 #!/usr/bin/env bash
 
+function GetCWD () {
+	SCRIPT_PATH="${BASH_SOURCE[0]}";
+	if ([ -h "${SCRIPT_PATH}" ]) then
+	  while([ -h "${SCRIPT_PATH}" ]) do SCRIPT_PATH=`readlink "${SCRIPT_PATH}"`; done
+	fi
+	pushd . > /dev/null
+	cd `dirname ${SCRIPT_PATH}` > /dev/null
+	SCRIPT_PATH=`pwd`;
+	popd  > /dev/null
+	echo $SCRIPT_PATH;
+}; pushd "`GetCWD`";
 
-
-DIR=$(cd $(dirname "$0"); pwd)
-echo "`$DIR` is from me"
 
 # init git modules
 git submodule init
@@ -18,3 +26,7 @@ VIM=`pwd`;
 
 Sym "$VIM" "$VI";
 Sym "$VIM/vimrc" "$RC";
+
+popd;
+
+echo "VIM configuration sucessful.";
