@@ -3,6 +3,12 @@
 # init git modules
 git submodule init
 
-# symlink the vims
-ln -s . ~/.vim
-ln -s ~/.vim/vimrc ~/.vimrc
+# sym vim dir
+VI=~/.vim;
+rm -rf $VI;
+ln -s ../vim $VI;
+
+# sym vimrc
+RC=~/.vimrc;
+rm -rf $RC;
+ln -s ./vimrc $RC;
