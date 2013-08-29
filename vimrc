@@ -2,15 +2,45 @@
 """ dottru/dotfiles vimrc
 """
 
-" automatically reload vimrc when it's saved
-au BufWritePost .vimrc so ~/.vimrc
+set nocompatible
 
 " Load pathogen
 runtime bundle/pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
-" map leader is nice
+set showmatch
+
 let mapleader = ","
+
+" Remap :W to :w
+command! W w
+command! Q q
+
+set autoread  
+
+"nnoremap <C-n> :bnext<CR>
+"nnoremap <C-p> :bprevious<CR>
+
+set wrapmargin=8
+
+set cursorline
+
+set noerrorbells
+
+set splitbelow
+set splitright
+
+set title
+
+set ttyfast
+
+" Sudo write (,W)
+noremap <leader>W :w !sudo tee %<CR>
+
+
+" Reload changes to .vimrc automatically
+autocmd BufWritePost  ~/.vimrc source ~/.vimrc
+autocmd BufWritePost  .gitignore execute '!git add % && git commit -a -m %;'
 
 "" show line numbers, indent like a decent citizen, tabstop of 4
 set number
@@ -18,6 +48,7 @@ set number
 "" skip backup and swap files since we live life balls to the wall
 set nobackup
 set noswapfile
+set nowb
 
 "" skip startup message
 set shortmess+=I
@@ -34,6 +65,7 @@ set hidden
 "" indent properly
 set smartindent
 set autoindent
+set smarttab
 
 "" tab properly
 set tabstop=2
@@ -109,7 +141,9 @@ set timeout timeoutlen=700 ttimeoutlen=700
 colorscheme solarized 
 set background=dark
 syntax on
-filetype plugin indent on
+
+filetype plugin on
+filetype indent on
 
 " Disable the fucking netrw files everywhere
 let g:netrw_home=$HOME
@@ -117,6 +151,7 @@ let g:netrw_home=$HOME
 " GIT SHORTCUTS
 nnoremap <Leader><Leader>s     :!git status<CR>
 nnoremap <Leader><Leader>a     :!git add %<CR>
+nnoremap <Leader><Leader>c     :!git a %; git commit -a<CR>
 
 " \h shortcuts to :help 
 nnoremap <Leader>h               :help 
@@ -147,6 +182,9 @@ autocmd vimenter * if !argc() | NERDTree | endif
 " Close nerd if it's all that's left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
+" use ghc functionality for haskell files
+au Bufenter *.hs compiler ghc
+
 " CtrlP
 nnoremap <C-p> :CtrlPMRU<CR>
 inoremap <C-p> <Esc>:CtrlPMRU<CR>
@@ -172,4 +210,25 @@ set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png
 set wildignore+=.DS_Store,.git,.hg,.svn
 set wildignore+=*~,*.swp,*.tmp
 
+" JSON
+au BufRead,BufNewFile *.json set ft=json syntax=javascript
 
+" ZSH
+au BufRead,BufNewFile .zsh_rc,.functions,.commonrc set ft=zsh
+
+" Fish
+au BufRead,BufNewFile *.fish set ft=fish
+
+set directory=/tmp " fuckin swap files
+
+set showmatch
+
+" hasksyn
+" How many lines should be searched for context
+let g:hasksyn_indent_search_backward = 100
+
+" Should we try to de-indent after a return
+let g:hasksyn_dedent_after_return = 1
+
+" Should we try to de-indent after a catchall case in a case .. of
+let g:hasksyn_dedent_after_catchall_case = 1
