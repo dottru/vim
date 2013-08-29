@@ -2,6 +2,9 @@
 """ dottru/dotfiles vimrc
 """
 
+" automatically reload vimrc when it's saved
+au BufWritePost .vimrc so ~/.vimrc
+
 " Load pathogen
 runtime bundle/pathogen/autoload/pathogen.vim
 execute pathogen#infect()
@@ -11,6 +14,19 @@ let mapleader = ","
 
 "" show line numbers, indent like a decent citizen, tabstop of 4
 set number
+
+"" skip backup and swap files since we live life balls to the wall
+set nobackup
+set noswapfile
+
+"" skip startup message
+set shortmess+=I
+
+"" show mode
+set showmode
+
+"" toggle paste
+set pastetoggle=<Leader>p
 
 "" let buffers have unsaved changes
 set hidden
@@ -121,6 +137,10 @@ nnoremap <Leader>0 :b10<CR>
 " mini buf expl auto start
 let g:miniBufExplAutoStart = 1
 
+" let neocache start I guess
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_smart_case = 1
+
 " Open nerd automatically
 autocmd vimenter * if !argc() | NERDTree | endif
 
@@ -151,3 +171,5 @@ set wildignore+=*.a,*.o
 set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png
 set wildignore+=.DS_Store,.git,.hg,.svn
 set wildignore+=*~,*.swp,*.tmp
+
+
