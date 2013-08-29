@@ -20,11 +20,16 @@ set smartindent
 set autoindent
 
 "" tab properly
-set ts=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 
 " show cmds as you type em
 set showcmd
+
+" search opts
+set hlsearch
+set ignorecase
 
 "" <Space> to : mappings
 nnoremap <Space>         :
@@ -133,12 +138,16 @@ nnoremap <Leader>rb :!bash %<CR>
 set encoding=utf-8
 let g:airline_powerline_fonts=1
 
-" Bind F9 to show `pwd`
-map <F9> :!pwd<CR>
+" Keep syntastic loc list open
+let g:syntastic_always_populate_loc_list=1
 
-" Binds F10 to git commit -a
-function! Commit()
-        :!git commit -a; git push origin master
-endfunction
-map <F10> :call Commit()<CR>
-imap <F10> <C-O>:call Commit()<CR>
+" TODO :: install fugitive and make an f9/f10 shortcut for it
+
+" fix tab menu
+set wildmenu
+set wildmode=longest,list
+
+set wildignore+=*.a,*.o
+set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png
+set wildignore+=.DS_Store,.git,.hg,.svn
+set wildignore+=*~,*.swp,*.tmp
