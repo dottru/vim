@@ -1,8 +1,14 @@
-vim
-===
+# dottru's vim cfg
 
-Dotfiles for my vim installation. You'll need one of thse patched fonts to use the powerline glyphs in PuTTY.
+Here lie the dotfiles for my vim installation. You'll need one of those patched fonts to use the powerline glyphs in PuTTY.
 Also try to get the solarised colour scheme for vim, it will save yer life fool.
+
+The `.vimrc` is pretty empty, aside from the pathogen call. Instead, vim loads the scripts in .vim/plugin in alphabetical order. I like how organised
+it feels. There's no real advantage. `plugin/choices.vim` has all the set and let commands in it. `plugin/globals.vim`
+handles all the global variables used by our various pathogen bundles. `plugins/keybindings.vim` is where all of my kb
+shortcuts are defined. `plugin/nerd-opts.vim` opens the file explorer on start. 
+
+Oh, and `plugin/style.vim` handles the appearance.
 
 [fonts]:     https://github.com/eugeneching/consolas-powerline-vim
 [solarized]: https://github.com/altercation/vim-colors-solarized.git

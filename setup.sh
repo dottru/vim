@@ -21,11 +21,10 @@ git submodule update
 function Sym () { rm -rf $2; ln -s $1 $2; }
 
 # conf directories
-VI=~/.vim; RC=~/.vimrc;
+VI=~/.vim;
 VIM=`pwd`;
 
 Sym "$VIM" "$VI";
-Sym "$VIM/vimrc" "$RC";
 
 popd;
 
