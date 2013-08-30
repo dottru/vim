@@ -34,3 +34,6 @@
 [submodule "bundle/hasksyn"]
 	path = bundle/hasksyn
 	url = https://github.com/travitch/hasksyn.git
+[submodule "bundle/node"]
+	path = bundle/node
+	url = https://github.com/moll/vim-node
