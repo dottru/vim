@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Shit.
 
 function GetCWD () {
 	SCRIPT_PATH="${BASH_SOURCE[0]}";
