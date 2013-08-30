@@ -25,6 +25,7 @@ VI=~/.vim;
 VIM=`pwd`;
 
 Sym "$VIM" "$VI";
+Sym $VIM/vimrc $HOME/.vimrc
 
 popd;
 
