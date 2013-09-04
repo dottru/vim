@@ -1,3 +1,18 @@
+"
+" dottru/vim dotfiles repo for my vim configuration
+"
+
+" REMINDER :: set a global mark here. mV is bound from <Leader>v
+" TODO :: install fugitive and make an f9/f10 shortcut for it
+
+" TODO :: use sessions like a boss
+" To automatically save and restore views for *.c files: >
+"   au BufWinLeave *.c mkview
+"   au BufWinEnter *.c silent loadview
+
+" ========================================================================
+" ======================================================================== 
+
 " Vundle required settings
 set nocompatible               " be iMproved
 filetype off                   " required!
