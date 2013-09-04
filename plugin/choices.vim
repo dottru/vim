@@ -39,7 +39,7 @@ set ruler
 " let buffers have unsaved changes
 set hidden
 
-set cmdheight=2
+"set cmdheight=2
 
 " search opts
 set hlsearch

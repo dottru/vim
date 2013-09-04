@@ -1,22 +1,26 @@
-"""
-""" dottru/dotfiles vimrc
-"""
+" Vundle required settings
+set nocompatible               " be iMproved
+filetype off                   " required!
 
-" REMINDER :: set a global mark here. mV is bound from <Leader>v
+" Vundle setup
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
+Bundle 'gmarik/vundle'
 
-" so plugin/choices
-" so plugin/keybindings
-" so plugin/nerdopts
+" VIM bundles
+Bundle 'tpope/vim-fugitive'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'fholgado/minibufexpl.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'kien/ctrlp.vim'
+Bundle 'ervandew/supertab'
+Bundle 'bling/vim-airline'
+Bundle 'bling/vim-bufferline'
+Bundle 'scrooloose/syntastic'
+Bundle 'taglist.vim'
+Bundle 'Shougo/neocomplcache'
+Bundle 'travitch/hasksyn'
+Bundle 'moll/vim-node'
 
-runtime bundle/pathogen/autoload/pathogen.vim
-execute pathogen#infect()
-
-
-
-" TODO :: install fugitive and make an f9/f10 shortcut for it
-
-" TODO :: use sessions like a boss
-" To automatically save and restore views for *.c files: >
-" 	au BufWinLeave *.c mkview
-" 	au BufWinEnter *.c silent loadview
+filetype plugin indent on

@@ -15,8 +15,7 @@ function GetCWD () {
 
 
 # init git modules
-git submodule init
-git submodule update
+git submodule update --init --recursive
 
 # Linker
 function Sym () { rm -rf $2; ln -s $1 $2; }

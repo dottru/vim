@@ -8,7 +8,7 @@ imap jj <Esc>:noh<CR>
 noremap <leader>W :w !sudo tee %<CR>
 
 " <Space> to : mappings
-nnoremap <Space>         :
+nnoremap <Space>    :
 
 " Do you know how often a comma and a space
 " occur in the english language?
@@ -90,9 +90,13 @@ inoremap <C-j> <C-w>j
 inoremap <C-k> <C-w>k
 inoremap <C-l> <C-w>l
 
-" CtrlP
-nnoremap <C-p> :CtrlPMRU<CR>
-inoremap <C-p> <Esc>:CtrlPMRU<CR>
-
 " NERDTree toggle
 nnoremap <Leader>e :NERDTreeToggle<CR>
+
+" Edit makefile
+nnoremap <Leader>m :edit Makefile
+
+" src %
+nnoremap <Leader>r :source %<CR>
+
+nnoremap <F5>      :make<CR>
