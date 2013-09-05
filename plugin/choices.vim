@@ -80,3 +80,7 @@ set pastetoggle=<Leader>p
 
 " Store viminfo under scm
 set viminfo+=n~/.vim/viminfo " ~useless~
+
+" status line
+set laststatus=2
+set statusline+=%{fugitive#statusline()}

@@ -4,6 +4,8 @@ map <silent> <leader><cr> :noh<cr>
 " TODO - add bindings for https://github.com/tpope/vim-fugitive
 nnoremap <F9> :Gstatus<CR>
 nnoremap <F10> :Gcommit<CR>:Git push<CR>
+nnoremap <C-f> :Ggrep 
+nnoremap <Leader>l :Glog<CR>
 
 " Quick <Esc> alternative; also clears search hilight
 imap jj <Esc>:noh<CR>j
