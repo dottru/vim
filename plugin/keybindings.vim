@@ -1,8 +1,18 @@
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
 
+" TODO - add bindings for https://github.com/tpope/vim-fugitive
+nnoremap <F9> :Gstatus<CR>
+nnoremap <F10> :Gcommit<CR>:Git push<CR>
+
 " Quick <Esc> alternative; also clears search hilight
-imap jj <Esc>:noh<CR>
+imap jj <Esc>:noh<CR>j
+imap kk <Esc>:noh<CR>k
+imap ll <Esc>:noh<CR>$
+imap hh <Esc>:noh<CR>^
+
+imap ;; <Esc>A;
+nnoremap ;; A;<Esc>
 
 " Sudo write (,W)
 noremap <leader>W :w !sudo tee %<CR>
