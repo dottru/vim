@@ -1,32 +1,35 @@
 #!/usr/bin/env bash
-# Shit.
 
-function GetCWD () {
-	SCRIPT_PATH="${BASH_SOURCE[0]}";
-	if ([ -h "${SCRIPT_PATH}" ]) then
-	  while([ -h "${SCRIPT_PATH}" ]) do SCRIPT_PATH=`readlink "${SCRIPT_PATH}"`; done
-	fi
-	pushd . > /dev/null
-	cd `dirname ${SCRIPT_PATH}` > /dev/null
-	SCRIPT_PATH=`pwd`;
-	popd  > /dev/null
-	echo $SCRIPT_PATH;
-}; pushd "`GetCWD`";
+## Includes
 
+. lib/txt.sh;
+. lib/control.sh
+. lib/git.sh
 
-# init git modules
-git submodule update --init --recursive
+###################
 
-# Linker
-function Sym () { rm -rf $2; ln -s $1 $2; }
+Section " VIM configuration";
+Msg "Changing directory to vim dotfiles.";
 
-# conf directories
-VI=~/.vim;
+# CD to script dir
+DirPush "./vim";
+
+echo "Updating git submodules.";
+GitInitSubmodules;
+NL;
+
+# vim variables
+VI_CFG="${HOME}/.vim";
 VIM=`pwd`;
 
-Sym "$VIM" "$VI";
-Sym $VIM/vimrc $HOME/.vimrc
+Msg " VIM directories ------------------- ";
+Msg "     dotfiles - `pwd`";
+Msg "     cfg      - ${VI_CFG}"; NL;
 
-popd;
+LinkBack "${VIM}" "${VI_CFG}";
+LinkBack "${VIM}/vimrc" "${HOME}/.vimrc";
+
+DirPop;
 
 echo "VIM configuration sucessful.";
+Pause; NL;
