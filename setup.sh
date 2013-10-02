@@ -9,14 +9,19 @@
 ###################
 
 Section " VIM configuration";
-Msg "Changing directory to vim dotfiles.";
 
-# CD to script dir
+Msg "Changing directory to vim dotfiles.";
 DirPush "./vim";
 
-echo "Updating git submodules.";
-GitInitSubmodules;
-NL;
+# clone vundle
+VUNDLE="https://github.com/gmarik/vundle.git";
+Msg "Cloning vundle into bundle/vundle...";
+rm -rf bundle/vundle;
+git clone $VUNDLE bundle/vundle;
+
+#echo "Updating git submodules.";
+#GitInitSubmodules;
+#NL;
 
 # vim variables
 VI_CFG="${HOME}/.vim";
@@ -32,4 +37,8 @@ LinkBack "${VIM}/vimrc" "${HOME}/.vimrc";
 DirPop;
 
 echo "VIM configuration sucessful.";
+echo "Launching vundle, VIM's ackage manager...";
+Pause;
+
+vim +BundleInstall +qall;
 Pause; NL;
