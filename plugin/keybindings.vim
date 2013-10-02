@@ -1,6 +1,13 @@
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
 
+nnoremap !      <Esc>:!
+nnoremap b      <Esc>:b
+nnoremap <Space>    :
+nnoremap <leader>r  :!bash %<CR>
+inoremap <Space><Space>     <Esc>:
+
+
 " TODO - add bindings for https://github.com/tpope/vim-fugitive
 nnoremap <F9> :Gstatus<CR>
 nnoremap <F10> :Gcommit<CR>:Git push<CR>
@@ -18,9 +25,6 @@ nnoremap ;; A;<Esc>
 
 " Sudo write (,W)
 noremap <leader>W :w !sudo tee %<CR>
-
-" <Space> to : mappings
-nnoremap <Space>    :
 
 " Do you know how often a comma and a space
 " occur in the english language?
@@ -63,9 +67,9 @@ command! W w
 command! Q q
 
 " GIT SHORTCUTS
-nnoremap <Leader><Leader>s     :!git status<CR>
-nnoremap <Leader><Leader>c     :!git a %; git commit -m %<CR>
-nnoremap <Leader><Leader>C     :!git commit -A -m %<CR>
+"nnoremap <Leader><Leader>s     :!git status<CR>
+"nnoremap <Leader><Leader>c     :!git a %; git commit -m %<CR>
+"nnoremap <Leader><Leader>C     :!git commit -A -m %<CR>
 
 " <Leader>c closes buffer :: <Leader>C forces close
 nnoremap <Leader>c          :bd<CR>
@@ -109,6 +113,6 @@ nnoremap <Leader>e :NERDTreeToggle<CR>
 nnoremap <Leader>m :edit Makefile
 
 " src %
-nnoremap <Leader>r :source %<CR>
+"nnoremap <Leader>s :source %<CR>
 
 nnoremap <F5>      :make<CR>
