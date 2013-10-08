@@ -17,7 +17,7 @@ nnoremap <Leader>l :Glog<CR>
 " Quick <Esc> alternative; also clears search hilight
 imap jj <Esc>:noh<CR>j
 imap kk <Esc>:noh<CR>k
-imap ll <Esc>:noh<CR>$
+"imap ll <Esc>:noh<CR>$
 imap hh <Esc>:noh<CR>^
 
 imap ;; <Esc>A;
@@ -116,3 +116,6 @@ nnoremap <Leader>m :edit Makefile
 "nnoremap <Leader>s :source %<CR>
 
 nnoremap <F5>      :make<CR>
+
+" Easy align
+vnoremap <silent> <Enter> :EasyAlign<Enter>

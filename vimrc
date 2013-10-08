@@ -40,5 +40,6 @@ Bundle 'taglist.vim'
 Bundle 'Shougo/neocomplcache'
 Bundle 'travitch/hasksyn'
 Bundle 'moll/vim-node'
+Bundle 'junegunn/vim-easy-align'
 
 filetype plugin indent on
