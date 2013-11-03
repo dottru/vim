@@ -90,3 +90,7 @@ set viminfo+=n~/.vim/viminfo " ~useless~
 " status line
 set laststatus=2
 set statusline+=%{fugitive#statusline()}
+
+" youcomplete me customisation
+let g:ycm_collect_identifiers_from_comments_and_strings=1
+let g:ycm_collect_identifiers_from_tags_files=1

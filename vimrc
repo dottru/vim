@@ -24,26 +24,35 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " VIM bundles
+" -------------------------- 
+
+Bundle 'xolox/vim-misc'
+Bundle 'xolox/vim-easytags'
 Bundle 'tpope/vim-fugitive'
-"Bundle 'surround.vim'
 Bundle 'Townk/vim-autoclose'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'fholgado/minibufexpl.vim'
-Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
 Bundle 'ervandew/supertab'
-"Bundle 'bling/vim-airline'
-"Bundle 'bling/vim-bufferline'
 Bundle 'Lokaltog/powerline'
 Bundle 'scrooloose/syntastic'
 Bundle 'taglist.vim'
-"Bundle 'Shougo/neocomplcache'
 Bundle 'travitch/hasksyn'
 Bundle 'moll/vim-node'
 Bundle 'junegunn/vim-easy-align'
 Bundle 'vim-scripts/surrparen'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'majutsushi/tagbar'
+
+"Bundle 'scrooloose/nerdtree'
+
+"Bundle 'Shougo/neocomplcache'
+"Bundle 'bling/vim-airline'
+"Bundle 'surround.vim'
+"Bundle 'bling/vim-bufferline'
+
+" -------------------------- 
 
 filetype plugin indent on
 
@@ -54,5 +63,5 @@ call util#EnsureDirExists($HOME . '/.vim/undo')
 call util#EnsureDirExists($HOME . '/.vim/backup')
 
 " Close nerd
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
+" autocmd VimEnter * NERDTree
+" autocmd VimEnter * wincmd p

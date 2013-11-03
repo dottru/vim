@@ -7,12 +7,12 @@ nnoremap <Space>    :
 nnoremap <leader>r  :!bash %<CR>
 inoremap <Space><Space>     <Esc>:
 
-
-" TODO - add bindings for https://github.com/tpope/vim-fugitive
-nnoremap <F9> :Gstatus<CR>
-nnoremap <F10> :Gcommit<CR>:Git push<CR>
-nnoremap <C-f> :Ggrep 
-nnoremap <Leader>l :Glog<CR>
+" FuGITive keybindings for vim
+nmap <leader>gs :Gstatus<cr>
+nmap <leader>gc :Gcommit<cr>
+nmap <leader>ga :Gwrite<cr>
+nmap <leader>gl :Glog<cr>
+nmap <leader>gd :Gdiff<cr>
 
 " Quick <Esc> alternative; also clears search hilight
 imap jj <Esc>:noh<CR>j
@@ -106,9 +106,6 @@ inoremap <C-j> <C-w>j
 inoremap <C-k> <C-w>k
 inoremap <C-l> <C-w>l
 
-" NERDTree toggle
-nnoremap <Leader>e :NERDTreeToggle<CR>
-
 " Edit makefile
 nnoremap <Leader>m :edit Makefile
 
@@ -119,3 +116,6 @@ nnoremap <F5>      :make<CR>
 
 " Easy align
 vnoremap <silent> <Enter> :EasyAlign<Enter>
+
+"Tagbar shortcut
+nmap <F8> :TagbarToggle<CR>

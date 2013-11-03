@@ -15,3 +15,14 @@ let g:Powerline_symbols='fancy'
 
 " Keep syntastic loc list open
 let g:syntastic_always_populate_loc_list=1
+
+" Tags file
+set tagrelative
+set tags=./.git/tags,./tags,~/.vim/easytags
+
+" Easytags opts
+let g:easytags_file='~/.vim/easytags'
+let g:easytags_always_enabled = 1
+" let g:easytags_autorecurse = 1
+" let g:easytags_resolve_links = 1
+let g:easytags_events = ['BufWritePost']
