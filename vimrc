@@ -26,7 +26,7 @@ Bundle 'gmarik/vundle'
 " VIM bundles
 Bundle 'tpope/vim-fugitive'
 "Bundle 'surround.vim'
-Bundle 'Townk/vim-autoclose'
+Bundle 'Raimondi/delimitMate'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'scrooloose/nerdtree'
