@@ -44,3 +44,16 @@ Bundle 'junegunn/vim-easy-align'
 Bundle 'vim-scripts/surrparen'
 
 filetype plugin indent on
+
+" Create necessary directories
+if !isdirectory("~/.vim/swap")
+    call mkdir("~/.vim/swap", "p")
+endif
+
+if !isdirectory("~/.vim/backup")
+    call mkdir("~/.vim/backup", "p")
+endif
+
+if !isdirectory("~/.vim/tags")
+    call mkdir("~/.vim/tags", "p")
+endif
