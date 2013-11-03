@@ -46,18 +46,18 @@ Bundle 'vim-scripts/surrparen'
 filetype plugin indent on
 
 " Create necessary directories
-if !isdirectory("~/.vim/swap")
-    call mkdir("~/.vim/swap", "p")
-endif
 
-if !isdirectory("~/.vim/backup")
-    call mkdir("~/.vim/backup", "p")
-endif
+function! EnsureExists (dir)
+  if !isdirectory(expand(a:dir))
+    if exists("*mkdir")
+      call mkdir(expand(a:dir),'p')
+    else
+      echo "Please create directory " . a:dir
+    endif
+  endif
+endfunction
 
-if !isdirectory("~/.vim/tags")
-    call mkdir("~/.vim/tags", "p")
-endif
-
-if !isdirectory("~/.vim/undo")
-    call mkdir("~/.vim/undo", "p")
-endif
+call EnsureExists($HOME . '/.vim/swap')
+call EnsureExists($HOME . '/.vim/tags')
+call EnsureExists($HOME . '/.vim/undo')
+call EnsureExists($HOME . '/.vim/backup')
