@@ -1,9 +1,8 @@
-"
-" dottru/vim dotfiles repo for my vim configuration
-"
+"" VIM CONFIGS (C) DOTTRU.IO 2013
+ " = = = = = = = = = = = = = = = =
 
-" REMINDER :: set a global mark here. mV is bound from <Leader>v
-" TODO :: install fugitive and make an f9/f10 shortcut for it
+" ./setup.sh has some dependencies on dottru/dotfiles/lib/*.sh libs.
+" Feel free to just ignore the setup.
 
 " TODO :: use sessions like a boss
 " To automatically save and restore views for *.c files: >
@@ -33,23 +32,26 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'kien/ctrlp.vim'
-Bundle 'ervandew/supertab'
 Bundle 'Lokaltog/powerline'
 Bundle 'scrooloose/syntastic'
 Bundle 'taglist.vim'
-Bundle 'travitch/hasksyn'
-Bundle 'moll/vim-node'
 Bundle 'junegunn/vim-easy-align'
-Bundle 'vim-scripts/surrparen'
-Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'Valloric/YouCompleteMe'
-Bundle 'majutsushi/tagbar'
-Bundle 'FredKSchott/CoVim'
 
+" 'Collaboration' plugins. They work very poorly.
+"Bundle 'Floobits/floobits-vim'
+"Bundle 'FredKSchott/CoVim'
+
+"Bundle 'travitch/hasksyn'
+"Bundle 'moll/vim-node'
+"Bundle 'vim-scripts/surrparen'
+"Bundle 'nathanaelkane/vim-indent-guides'
+"Bundle 'majutsushi/tagbar'
+"Bundle 'ervandew/supertab'
 "Bundle 'scrooloose/nerdtree'
 
-"Bundle 'Shougo/neocomplcache'
-"Bundle 'bling/vim-airline'
+"Bundle 'Shougo/neocomplcache'      " replaced with YCM
+"Bundle 'bling/vim-airline'         " dunno why I liked this
 "Bundle 'surround.vim'
 "Bundle 'bling/vim-bufferline'
 
