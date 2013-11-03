@@ -26,3 +26,6 @@ let g:easytags_always_enabled = 1
 " let g:easytags_autorecurse = 1
 " let g:easytags_resolve_links = 1
 let g:easytags_events = ['BufWritePost']
+
+let CoVim_default_name = "Joshua"
+let CoVim_default_port = "5555"
