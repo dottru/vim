@@ -44,6 +44,7 @@ Bundle 'vim-scripts/surrparen'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'majutsushi/tagbar'
+Bundle 'FredKSchott/CoVim'
 
 "Bundle 'scrooloose/nerdtree'
 
