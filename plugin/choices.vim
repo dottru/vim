@@ -59,10 +59,15 @@ set expandtab
 " skip backup and swap files since we live life balls to the wall
 set nobackup
 set noswapfile
+set backupdir=./.backup,~/.backup,/tmp,.
+set directory=/tmp
 
-" TODO :: why is this still here?
-" fuckin swap files
-" set directory=/tmp 
+" Undo files / history
+set udf
+set undodir=./.undo,~/.undo,/tmp,.
+
+" Use a visual bell
+set visualbell
 
 " Window split options
 set splitbelow
