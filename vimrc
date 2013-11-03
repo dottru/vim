@@ -41,5 +41,6 @@ Bundle 'Shougo/neocomplcache'
 Bundle 'travitch/hasksyn'
 Bundle 'moll/vim-node'
 Bundle 'junegunn/vim-easy-align'
+Bundle 'vim-scripts/surrparen'
 
 filetype plugin indent on
