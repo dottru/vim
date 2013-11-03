@@ -42,6 +42,7 @@ Bundle 'travitch/hasksyn'
 Bundle 'moll/vim-node'
 Bundle 'junegunn/vim-easy-align'
 Bundle 'vim-scripts/surrparen'
+Bundle 'nathanaelkane/vim-indent-guides'
 
 filetype plugin indent on
 

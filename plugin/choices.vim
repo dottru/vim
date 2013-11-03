@@ -53,7 +53,8 @@ set smarttab
 
 " tab properly
 set tabstop=4
-set shiftwidth=2
+set softtabstop=4
+set shiftwidth=4
 set expandtab
 
 " skip backup and swap files since we live life balls to the wall
