@@ -21,3 +21,5 @@ fun! NoExcitingBuffersLeft()
   endif
 endfun
 autocmd BufWinLeave * call NoExcitingBuffersLeft()
+
+let NERDTreeQuitOnOpen=1

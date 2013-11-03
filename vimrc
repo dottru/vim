@@ -37,7 +37,7 @@ Bundle 'ervandew/supertab'
 Bundle 'Lokaltog/powerline'
 Bundle 'scrooloose/syntastic'
 Bundle 'taglist.vim'
-Bundle 'Shougo/neocomplcache'
+"Bundle 'Shougo/neocomplcache'
 Bundle 'travitch/hasksyn'
 Bundle 'moll/vim-node'
 Bundle 'junegunn/vim-easy-align'
@@ -48,7 +48,11 @@ Bundle 'Valloric/YouCompleteMe'
 filetype plugin indent on
 
 " Create necessary directories
-call EnsureExists($HOME . '/.vim/swap')
-call EnsureExists($HOME . '/.vim/tags')
-call EnsureExists($HOME . '/.vim/undo')
-call EnsureExists($HOME . '/.vim/backup')
+call util#EnsureDirExists($HOME . '/.vim/swap')
+call util#EnsureDirExists($HOME . '/.vim/tags')
+call util#EnsureDirExists($HOME . '/.vim/undo')
+call util#EnsureDirExists($HOME . '/.vim/backup')
+
+" Close nerd
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
