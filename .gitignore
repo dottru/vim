@@ -2,3 +2,7 @@
 *.swo
 viminfo
 bundle/*
+backup
+swap
+tags
+undo
