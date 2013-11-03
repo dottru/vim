@@ -59,12 +59,12 @@ set expandtab
 " skip backup and swap files since we live life balls to the wall
 set nobackup
 set noswapfile
-set backupdir=./.backup,~/.backup,/tmp,.
-set directory=/tmp
+set backupdir=~/.vim/backup,/tmp
+set directory=~/.vim/swap,/tmp
 
 " Undo files / history
 set udf
-set undodir=./.undo,~/.undo,/tmp,.
+set undodir=~/.vim/undo,/tmp
 
 " Use a visual bell
 set visualbell

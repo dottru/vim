@@ -57,3 +57,7 @@ endif
 if !isdirectory("~/.vim/tags")
     call mkdir("~/.vim/tags", "p")
 endif
+
+if !isdirectory("~/.vim/undo")
+    call mkdir("~/.vim/undo", "p")
+endif
