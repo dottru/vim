@@ -8,7 +8,10 @@
 
 ###################
 
-Section " VIM configuration";
+Section " VIM Setup";
+
+Msg "Installing ctags";
+sudo apt-get install ctags;
 
 Msg "Changing directory to vim dotfiles.";
 DirPush "./vim";
