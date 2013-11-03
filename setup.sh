@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-## Includes
+# libs ############
 
 . lib/txt.sh;
 . lib/control.sh
@@ -8,13 +8,11 @@
 
 ###################
 
-Section " VIM Setup";
-
 Msg "Installing ctags";
 sudo apt-get install ctags;
 
 Msg "Changing directory to vim dotfiles.";
-DirPush "./vim";
+DirPush "~/.vim";
 
 # clone vundle
 VUNDLE="https://github.com/gmarik/vundle.git";
