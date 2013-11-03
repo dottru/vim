@@ -43,21 +43,11 @@ Bundle 'moll/vim-node'
 Bundle 'junegunn/vim-easy-align'
 Bundle 'vim-scripts/surrparen'
 Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'Valloric/YouCompleteMe'
 
 filetype plugin indent on
 
 " Create necessary directories
-
-function! EnsureExists (dir)
-  if !isdirectory(expand(a:dir))
-    if exists("*mkdir")
-      call mkdir(expand(a:dir),'p')
-    else
-      echo "Please create directory " . a:dir
-    endif
-  endif
-endfunction
-
 call EnsureExists($HOME . '/.vim/swap')
 call EnsureExists($HOME . '/.vim/tags')
 call EnsureExists($HOME . '/.vim/undo')
