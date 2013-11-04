@@ -13,19 +13,24 @@ pushd "${HOME}/.vim/";
 
 VUNDLE="https://github.com/gmarik/vundle.git";
 Msg "Cloning vundle into bundle/vundle...";
-rm -rf bundle/vundle;
-git clone $VUNDLE bundle/vundle;
 
+# Clone vundle into fresh dir
+rm -rf bundle/vundle; git clone $VUNDLE bundle/vundle;
 
+# Run setup
 Msg "Installing bundles.";
-Pause;
-
 vim +BundleInstall +qall;
 
-# These come in renamed to avoid errorsa during installation
-mv _plugin plugin; 
+# These come in renamed to avoid errors during installation
+if [ -d "_plugin" ]; then
+    echo "Renamed plugins."; Pause;
+    mv _plugin plugin; 
+fi;
 
+# Build YCM
 pushd 'bundle/YouCompleteMe';
+Msg "Install: cmake python-dev\n\n    before pressing [Enter].";
+Pause;
 ./install.sh;
 popd;
 

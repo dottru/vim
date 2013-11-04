@@ -4,11 +4,6 @@
 " ./setup.sh has some dependencies on dottru/dotfiles/lib/*.sh libs.
 " Feel free to just ignore the setup.
 
-" TODO :: use sessions like a boss
-" To automatically save and restore views for *.c files: >
-"   au BufWinLeave *.c mkview
-"   au BufWinEnter *.c silent loadview
-
 " ========================================================================
 " ======================================================================== 
 
