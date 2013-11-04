@@ -31,7 +31,7 @@ fi;
 
 # Build YCM
 pushd "bundle/YouCompleteMe";
-Msg "Install: cmake python-dev\n\n    before pressing [Enter]."; Pause;
+Msg "Install: cmake python-dev\n\r\n\r    before pressing [Enter]."; Pause;
 ./install.sh; popd;
 
 Msg "VIM configuration completed.";
