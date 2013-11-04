@@ -14,6 +14,10 @@ nmap <leader>ga :Gwrite<cr>
 nmap <leader>gl :Glog<cr>
 nmap <leader>gd :Gdiff<cr>
 
+" Quick roll of the fingers to esc
+imap jk <Esc><CR>
+imap kj <Esc><CR>
+
 " Quick <Esc> alternative; also clears search hilight
 imap jj <Esc>:noh<CR>j
 imap kk <Esc>:noh<CR>k
