@@ -1,3 +1,8 @@
+" Not everyone will make their own huge set of keybindings.
+"
+" It's just part of the game.
+
+
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
 
