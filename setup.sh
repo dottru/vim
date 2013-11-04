@@ -25,6 +25,10 @@ vim +BundleInstall +qall;
 # These come in renamed to avoid errorsa during installation
 mv _plugin plugin; 
 
+pushd 'bundle/YouCompleteMe';
+./install.sh;
+popd;
+
 Msg "VIM configuration completed.";
 Pause;
 popd;
