@@ -19,12 +19,13 @@ Bundle 'gmarik/vundle'
 
 " VIM bundles
 " -------------------------- 
+Bundle 'junegunn/seoul256.vim'
+"Bundle 'altercation/vim-colors-solarized'
 
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-easytags'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Raimondi/delimitMate'
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/powerline'
