@@ -80,7 +80,7 @@ set undodir=~/.vim/undo,/tmp
 set splitbelow
 set splitright
 
-" skip startup message
+" skip startup message / splash screen
 set shortmess+=I
 
 " various shows
@@ -94,7 +94,7 @@ set confirm
 set pastetoggle=<Leader>p
 
 " Store viminfo under scm
-set viminfo+=n~/.vim/viminfo " ~useless~
+set viminfo='25,\"128,:128,%,n~/.vim/viminfo
 
 " status line
 set laststatus=2
