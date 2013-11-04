@@ -12,6 +12,9 @@ VUNDLE="https://github.com/gmarik/vundle.git";
 # sudo apt-get install ctags;
 ####################
 
+# To avoid error when we load vim for :BundleInstall
+mv plugin _plugin;
+
 Msg "Changing directory to vim dotfiles.";
 pushd "${HOME}/.vim";
 
@@ -23,11 +26,7 @@ vim +BundleInstall +qall;
 Pause;
 
 # These come in renamed to avoid errors during installation
-if [ -d "_plugin" ]; then
-    # TODO: remove
-    echo "Renamed plugins."; Pause;
-    mv _plugin plugin; 
-fi;
+mv _plugin plugin;
 
 # Build YCM
 pushd "bundle/YouCompleteMe";
