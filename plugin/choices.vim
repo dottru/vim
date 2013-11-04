@@ -8,7 +8,8 @@ filetype plugin indent on
 let mapleader = ","
 
 " Shorten the shortcut timeout a bit
-set timeout timeoutlen=500 ttimeoutlen=500
+set notimeout ttimeout ttimeoutlen=200
+" timeout timeoutlen=500 ttimeoutlen=500
 
 " Keeps the cursor in view
 set scrolloff=10
@@ -30,16 +31,22 @@ set autoread
 set showmatch
 set wrapmargin=8
 set cursorline
-set noerrorbells
+
 set title
 set ttyfast
 set number
 set ruler
 
+set nostartofline
+
+" Use a visual bell     "| set noerrorbells
+set visualbell
+set t_vb=
+
 " let buffers have unsaved changes
 set hidden
 
-"set cmdheight=2
+set cmdheight=2
 
 " search opts
 set hlsearch
@@ -63,12 +70,11 @@ set noswapfile
 set backupdir=~/.vim/backup,/tmp
 set directory=~/.vim/swap,/tmp
 
+set backspace=indent,eol,start
+
 " Undo files / history
 set udf
 set undodir=~/.vim/undo,/tmp
-
-" Use a visual bell
-set visualbell
 
 " Window split options
 set splitbelow
@@ -80,6 +86,9 @@ set shortmess+=I
 " various shows
 set showmode
 set showcmd
+
+" Ask to save.
+set confirm
 
 " toggle paste
 set pastetoggle=<Leader>p
