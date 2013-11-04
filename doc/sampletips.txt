@@ -1,0 +1,7 @@
+*sampletips.txt*    An example help doc to show you how it's done.
+
+*tip-index*
+
+1. First tip
+2. Second tip
+3. Third tip
