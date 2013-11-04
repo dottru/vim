@@ -33,6 +33,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'taglist.vim'
 Bundle 'junegunn/vim-easy-align'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'kien/ctrlp.vim'
 
 " 'Collaboration' plugins. They work very poorly.
 "Bundle 'Floobits/floobits-vim'
