@@ -34,6 +34,9 @@ Bundle 'taglist.vim'
 Bundle 'junegunn/vim-easy-align'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'kien/ctrlp.vim'
+Bundle 'cfurrow/vim-l9'
+Bundle 'vim-scripts/FuzzyFinder'
+Bundle 'sjl/vitality.vim'
 
 " 'Collaboration' plugins. They work very poorly.
 "Bundle 'Floobits/floobits-vim'

@@ -1,2 +1,2 @@
-" ZSH
-au BufRead,BufNewFile .zsh_rc,.functions,.commonrc set ft=zsh
+"ZSH filetype
+autocmd BufNewFile,BufRead *.zsh,.zshrc,.zsh_rc setlocal filetype=zsh

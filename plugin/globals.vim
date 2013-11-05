@@ -29,3 +29,8 @@ let g:easytags_events = ['BufWritePost']
 
 let CoVim_default_name = "Joshua"
 let CoVim_default_port = "5555"
+
+let g:fuf_modesDisable = []
+
+set autowrite
+set autowriteall

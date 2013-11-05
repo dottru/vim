@@ -3,7 +3,8 @@ augroup reload
   autocmd!
   
   " Needed?
-  autocmd BufWritePost $MYVIMRC source $MYVIMRC
+  autocmd BufWritePost $MYVIMRC call util#Source($MYVIMRC)
+  "source $MYVIMRC
   
 augroup end
 
