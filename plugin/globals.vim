@@ -18,17 +18,14 @@ let g:syntastic_always_populate_loc_list=1
 
 " Tags file
 set tagrelative
-set tags=./.git/tags,./tags,~/.vim/easytags
+set tags=./.vim/tags/tags,./tags
 
 " Easytags opts
-let g:easytags_file='~/.vim/easytags'
+let g:easytags_file='~/.vim/tags/tags'
 let g:easytags_always_enabled = 1
-" let g:easytags_autorecurse = 1
-" let g:easytags_resolve_links = 1
+let g:easytags_autorecurse = 1
+let g:easytags_resolve_links = 1
 let g:easytags_events = ['BufWritePost']
-
-let CoVim_default_name = "Joshua"
-let CoVim_default_port = "5555"
 
 let g:fuf_modesDisable = []
 

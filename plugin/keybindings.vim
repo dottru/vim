@@ -31,6 +31,7 @@ nnoremap !      :!
 " b to browse, ls to quick-switch
 nnoremap b      <Esc>:FufBuffer<cr>
 nnoremap ls     :ls<cr>:b 
+nnoremap bd     :bd<cr>
 
 " space to enter a cmd
 nnoremap <Space>    :
@@ -38,11 +39,14 @@ nnoremap <Space>    :
 " rs to re-select last block
 nnoremap rs          gv
 
+nnoremap tt :!ctags -a -R -f ~/.vim/tags/tags `pwd`<cr>
+
 " movement in insert mode that also exits to normal
 " mode and clears search results
 imap jj <Esc>:call util#Clear("j")<cr>
 imap kk <Esc>:call util#Clear("k")<cr>
-imap hh <Esc>:call util#Clear("^")<cr>
+"imap hh <Esc>hhi 
+":call util#Clear("^")<cr>
 
 " Had to remap due to accidents 
 imap LL <Esc>:call util#Clear("$")<cr>
@@ -56,6 +60,7 @@ nnoremap WW :call util#SudoWrite()<cr>
 nnoremap ww :w<cr>:echo "If that fails, try sudo write with WW."<cr>
 
 " vv to edit .vimrc
+nnoremap <Leader>v <Esc>:echo "This has been remapped to vv, have a good day."<cr>
 nnoremap vv :e $MYVIMRC<CR>
 
 " insta quit
@@ -73,7 +78,6 @@ nnoremap K                  :bd!<CR>
 inoremap K             <Esc>:bd!<CR>
 
 " \h shortcuts to :help 
-nnoremap         h                help 
 inoremap <Leader>h          <Esc>:help 
 
 " Buffer navigation

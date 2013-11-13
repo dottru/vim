@@ -37,6 +37,8 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'cfurrow/vim-l9'
 Bundle 'vim-scripts/FuzzyFinder'
 Bundle 'sjl/vitality.vim'
+Bundle 'kien/rainbow_parentheses.vim'
+
 
 " 'Collaboration' plugins. They work very poorly.
 "Bundle 'Floobits/floobits-vim'
@@ -67,4 +69,4 @@ call util#EnsureDirExists($HOME . '/.vim/backup')
 
 " Close nerd
 " autocmd VimEnter * NERDTree
-" autocmd VimEnter * wincmd p
+: autocmd VimEnter * wincmd p
