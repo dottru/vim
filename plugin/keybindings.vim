@@ -22,6 +22,7 @@
 " =========================
 
 " 'Maximise' / 'Minimise' a window
+map :resize     <Esc>:echo "Use MM to stretch a window or mm to shrink one. voila~"<cr>
 nnoremap MM     <C-w>10+
 nnoremap mm     <C-w>10-
 
@@ -29,7 +30,7 @@ nnoremap mm     <C-w>10-
 nnoremap !      :!
 
 " b to browse, ls to quick-switch
-nnoremap b      <Esc>:FufBuffer<cr>
+" nnoremap b      <Esc>:FufBuffer<cr> " This got annoying so goddamn fast.
 nnoremap ls     :ls<cr>:b 
 nnoremap bd     :bd<cr>
 
@@ -74,8 +75,10 @@ command! Q q
 " <Leader>c closes buffer :: <Leader>C forces close
 nnoremap <Leader>c          :bd<CR>
 inoremap <Leader>c     <Esc>:bd<CR>
-nnoremap K                  :bd!<CR>
-inoremap K             <Esc>:bd!<CR>
+
+" Got annoying real fast.
+"nnoremap K                  :bd!<CR>
+"inoremap K             <Esc>:bd!<CR>
 
 " \h shortcuts to :help 
 inoremap <Leader>h          <Esc>:help 

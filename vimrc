@@ -32,7 +32,9 @@ Bundle 'Lokaltog/powerline'
 Bundle 'scrooloose/syntastic'
 Bundle 'taglist.vim'
 Bundle 'junegunn/vim-easy-align'
-Bundle 'Valloric/YouCompleteMe'
+
+" Was causing hella bugs
+" Bundle 'Valloric/YouCompleteMe'
 Bundle 'kien/ctrlp.vim'
 Bundle 'cfurrow/vim-l9'
 Bundle 'vim-scripts/FuzzyFinder'
