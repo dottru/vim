@@ -2,7 +2,7 @@
 let mapleader = ","
 
 " Shorten the shortcut timeout a bit
-set timeout timeoutlen=5000 ttimeoutlen=50
+set timeout timeoutlen=500 ttimeoutlen=50
 
 " Keeps the cursor in view
 set scrolloff=10

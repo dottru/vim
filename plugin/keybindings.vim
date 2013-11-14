@@ -56,7 +56,7 @@ nnoremap QQ        <Esc>:qa!<cr>
 nnoremap \\        <Esc>:qa!<cr>
 
 " Sick and tired of that typo
-command! W 
+command! W w
 
 command! Q q
 
