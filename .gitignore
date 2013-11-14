@@ -3,3 +3,5 @@ viminfo
 viminfo,!
 backup/*
 swap/*
+tags
+bundle
