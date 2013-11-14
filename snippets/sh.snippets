@@ -1,0 +1,14 @@
+snippet     #!0
+abbr        env
+    #!/usr/bin/env bash
+
+snippet     function
+abbr        fun
+    ${1:func_name} () {
+        ${0:#func_body}
+    }
+
+snippet     if
+    if [[ ${1:conditional}  ]]; then
+        ${0:#body}
+    fi

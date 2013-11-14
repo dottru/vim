@@ -3,15 +3,10 @@
 
 " == Window size/position/split===========================================
 " ======================================================================== 
-
-
 nnoremap <Leader>h        :help 
 
 " Grows or shrinks a window. (MaxiMise, MiniMise)
-" nnoremap MM     <C-w>10+
-" nnoremap mm     <C-w>10-
-nnoremap MM :call util#WindowGrow()<cr>
-nnoremap mm :call util#WindowShrink()<cr>
+nnoremap MM         <C-w>o
 
 " Command definitions
 command! BufSelect     :CtrlPBuffer
@@ -141,14 +136,6 @@ nnoremap wc     :cclose<cr>
 " == Window size/position/split===========================================
 " ======================================================================== 
 
-" Grows or shrinks a window. (MaxiMise, MiniMise)
-" nnoremap MM     <C-w>10+
-" nnoremap mm     <C-w>10-
-nnoremap MM :call util#WindowGrowHor()<cr>
-nnoremap mm :call util#WindowShrinkHor()<cr>
-nnoremap <Leader>MM     :call util#WindowGrowVert()<cr>
-nnoremap <Leader>mm     :call util#WindowShrinkVert()<cr>
-
 
 " f5 or ls
 nnoremap <F5>           :call util#BufferSelect()<cr>
@@ -218,7 +205,7 @@ inoremap <C-k> <Esc><C-w>k
 inoremap <C-l> <Esc><C-w>l
 
 " Reload configuration
-nnoremap <Leader>r :echo "Reload the configuration you are currenty editing with rr."<cr>
+nnoremap <Leader>r :echo "Reload the configuration you are currently editing with rr."<cr>
 nnoremap        rr :source %<cr>
 
 
@@ -226,5 +213,3 @@ nnoremap        rr :source %<cr>
 vnoremap jk                 <Esc>:call util#Save()<cr>
 vnoremap kj                 <Esc>:call util#Save()<cr>
 inoremap jk                 <Esc>:call util#Save()<cr>
-
-

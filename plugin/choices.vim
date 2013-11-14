@@ -99,4 +99,4 @@ set autowriteall
 
 " Tags file
 set tagrelative
-set tags=tags,~/.vim/tags/tags
+set tags+=~/.vim/tags/vim,tags
