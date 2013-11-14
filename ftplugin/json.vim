@@ -1,2 +1,3 @@
-" JSON
-au BufRead,BufNewFile *.json set ft=json syntax=javascript
+" Javascript
+au BufRead,BufNewFile *.js set ft=js syntax=javascript
+set suffixesadd+=.js

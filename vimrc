@@ -52,8 +52,15 @@ Bundle 'davidhalter/jedi-vim'
 
 " supertab
 Bundle 'ervandew/supertab'
-Bundle 'pyflakes'
 
+" Auto close ( [ " ' etcetera 
+Bundle 'jiangmiao/auto-pairs'
+
+Bundle 'pyflakes.vim'
+
+" like ack/grep
+Bundle 'ggreer/the_silver_searcher'
+Bundle 'rking/ag.vim'
 " ======================================================================== 
 " ======================================================================== 
 

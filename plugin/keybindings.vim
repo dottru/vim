@@ -4,6 +4,9 @@
 " == Window size/position/split===========================================
 " ======================================================================== 
 
+
+nnoremap <Leader>h        :help 
+
 " Grows or shrinks a window. (MaxiMise, MiniMise)
 " nnoremap MM     <C-w>10+
 " nnoremap mm     <C-w>10-
@@ -18,7 +21,7 @@ command! MRUSelect     :CtrlPMRU
 
 " f5, ls, or <Leader>b
 nnoremap <F5>           :CtrlPMRU<cr>
-nnoremap  ls            :BufSelect<cr>
+nnoremap  ls            :ls<cr>:b 
 nnoremap <Leader>d      :DirSelect<cr>
 nnoremap <Leader>b      :BufSelect<cr>
 inoremap <Leader>b      <Esc>:BufSelect<cr>
@@ -27,15 +30,11 @@ nnoremap <Leader>rf     :MRUSelect<cr>
 nnoremap <C-p>          :CtrlPMixed<cr>
 
 " space to enter a cmd
-nnoremap <Space>    :
+nnoremap <Space>              :
+inoremap <Leader><Space> <Esc>:w<cr>
 
 " rs to re-select last block
 nnoremap rs          gv
-
-" movement in insert mode that also exits to normal
-" mode and clears search results
-inoremap jj <Esc>:call util#Clear("j")<cr>
-inoremap kk <Esc>:call util#Clear("k")<cr>
 
 " Double ; appends one to the current line
 inoremap ;; <Esc>A;
@@ -54,6 +53,7 @@ nnoremap VV :source ~/.vim/vimrc<cr>
 " rage quit
 inoremap qq        <Esc>:qa!<cr>
 nnoremap QQ        <Esc>:qa!<cr>
+nnoremap \\        <Esc>:qa!<cr>
 
 " Sick and tired of that typo
 command! W 
@@ -81,10 +81,10 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-inoremap <C-h> <Esc><C-w>h
-inoremap <C-j> <Esc><C-w>j
-inoremap <C-k> <Esc><C-w>k
-inoremap <C-l> <Esc><C-w>l
+inoremap <C-h> <C-O><C-w>h
+inoremap <C-j> <C-O><C-w>j
+inoremap <C-k> <C-O><C-w>k
+inoremap <C-l> <C-O><C-w>l
 
 " Reload configuration
 nnoremap <Leader>r :echo "Reload the configuration you are currenty editing with rr."<cr>
@@ -100,6 +100,41 @@ inoremap kj                 <Esc>:call util#Save()<cr>
 " Search
 map <F4> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
 nnoremap <C-f>      :call search#Search()<cr>
+nnoremap cr         :call search#CloseSearch()<cr>
+
+" Easy align
+vnoremap <silent> <Enter> :EasyAlign<Enter>
+
+nnoremap cr         :call search#CloseSearch()<cr>
+
+" Easy align
+vnoremap <silent> <Enter> :EasyAlign<Enter>
+
+" Splits, sv for |... sh for ---
+nnoremap sv      :vsp<cr>
+nnoremap sh      :sp<cr>
+
+" Save window resizing
+nnoremap <Leader><Leader>h    :10MinH<cr>
+nnoremap <Leader><Leader>k    :10MinV<cr>
+nnoremap <Leader><Leader>l    :10MaxH<cr>
+nnoremap <Leader><Leader>j    :10MaxV<cr>
+
+" Clear hilight with esc
+
+" on escape remove highlight
+nnoremap <silent> <ESC> :nohlsearch<cr>
+
+nnoremap <space>s :Unite -quick-match buffer<cr>
+
+"nnoremap qf     :echom "Open QuickFix with wo, close it with wc."<cr>
+nnoremap wo     :copen<cr>
+nnoremap wc     :cclose<cr>
+
+
+
+
+
 "" VIM KEYBOARD SHORTCUTS (C) DOTTRU.IO 2013
 " = = = = = = = = = = = = = = = = = = = = = =
 
@@ -129,8 +164,10 @@ nnoremap rs          gv
 
 " movement in insert mode that also exits to normal
 " mode and clears search results
-inoremap jj <Esc>:call util#Clear("j")<cr>
-inoremap kk <Esc>:call util#Clear("k")<cr>
+imap <C-h> <C-O>h
+imap <C-j> <C-O>j
+imap <C-k> <C-O>k
+imap <C-l> <C-O>l
 
 " Double ; appends one to the current line
 inoremap ;; <Esc>A;
@@ -146,7 +183,7 @@ nnoremap <Leader>v <Esc>:echo "This has been remapped to vv, have a good day."<c
 nnoremap vv :e $MYVIMRC<cr>
 nnoremap VV :source ~/.vim/vimrc<cr>
 
-" rage quit
+" rAGE QUIT
 inoremap qq        <Esc>:qa!<cr>
 nnoremap QQ        <Esc>:qa!<cr>
 
@@ -189,35 +226,5 @@ nnoremap        rr :source %<cr>
 vnoremap jk                 <Esc>:call util#Save()<cr>
 vnoremap kj                 <Esc>:call util#Save()<cr>
 inoremap jk                 <Esc>:call util#Save()<cr>
-inoremap kj                 <Esc>:call util#Save()<cr>
 
-" Search
-map <F4> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
-nnoremap <C-f>      :call search#Search()<cr>
-nnoremap cr         :call search#CloseSearch()<cr>
 
-" Easy align
-vnoremap <silent> <Enter> :EasyAlign<Enter>
-
-nnoremap cr         :call search#CloseSearch()<cr>
-
-" Easy align
-vnoremap <silent> <Enter> :EasyAlign<Enter>
-
-" Splits, sv for |... sh for ---
-nnoremap sv      :vsp<cr>
-nnoremap sh      :sp<cr>
-
-" Sane window resizing
-source ~/.vim/autoload/win.vim
-nnoremap <Leader><Leader>h    :10MinH<cr>
-nnoremap <Leader><Leader>k    :10MinV<cr>
-nnoremap <Leader><Leader>l    :10MaxH<cr>
-nnoremap <Leader><Leader>j    :10MaxV<cr>
-
-" Clear hilight with esc
-
-" on escape remove highlight
-nnoremap <silent> <ESC> :nohlsearch<cr>
-
-nnoremap <space>s :Unite -quick-match buffer<cr>

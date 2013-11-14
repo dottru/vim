@@ -82,7 +82,7 @@ set showmode
 set showcmd
 
 " Ask to save on hot exit
-set confirm
+" set confirm
 
 " toggle paste
 set pastetoggle=<Leader>p
@@ -100,4 +100,3 @@ set autowriteall
 " Tags file
 set tagrelative
 set tags=tags,~/.vim/tags/tags
-
