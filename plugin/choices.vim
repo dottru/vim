@@ -103,3 +103,5 @@ set statusline+=%{fugitive#statusline()}
 " youcomplete me customisation
 let g:ycm_collect_identifiers_from_comments_and_strings=1
 let g:ycm_collect_identifiers_from_tags_files=1
+
+let g:neocomplcache_enable_at_startup = 1
