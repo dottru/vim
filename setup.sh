@@ -29,9 +29,9 @@ Pause;
 mv _plugin plugin;
 
 # Build YCM
-pushd "bundle/YouCompleteMe";
-Msg "Install: cmake python-dev\n\r\n\r    before pressing [Enter]."; Pause;
-./install.sh; popd;
+#pushd "bundle/YouCompleteMe";
+#Msg "Install: cmake python-dev\n\r\n\r    before pressing [Enter]."; Pause;
+#./install.sh; popd;
 
 Msg "VIM configuration completed.";
 Pause; popd;
