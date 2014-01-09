@@ -27,7 +27,6 @@ Bundle 'xolox/vim-easytags'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Raimondi/delimitMate'
 Bundle 'fholgado/minibufexpl.vim'
-Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/powerline'
 Bundle 'scrooloose/syntastic'
 Bundle 'taglist.vim'
@@ -54,7 +53,7 @@ Bundle 'kien/rainbow_parentheses.vim'
 "Bundle 'ervandew/supertab'
 "Bundle 'scrooloose/nerdtree'
 
-"Bundle 'Shougo/neocomplcache'      " replaced with YCM
+Bundle 'Shougo/neocomplcache'      " replaced with YCM
 "Bundle 'bling/vim-airline'         " dunno why I liked this
 "Bundle 'surround.vim'
 "Bundle 'bling/vim-bufferline'
@@ -71,4 +70,4 @@ call util#EnsureDirExists($HOME . '/.vim/backup')
 
 " Close nerd
 " autocmd VimEnter * NERDTree
-: autocmd VimEnter * wincmd p
+" autocmd VimEnter * wincmd p
