@@ -12,9 +12,6 @@ VUNDLE="https://github.com/gmarik/vundle.git";
 # sudo apt-get install ctags;
 ####################
 
-# To avoid error when we load vim for :BundleInstall
-mv plugin _plugin;
-
 Msg "Changing directory to vim dotfiles.";
 pushd "${HOME}/.vim";
 
@@ -22,11 +19,11 @@ Msg "Cloning vundle into bundle/vundle...";
 rm -rf bundle/vundle; git clone $VUNDLE bundle/vundle;
 
 Msg "Installing vundle packages.";
+mv plugin _plugin;
 vim +BundleInstall +qall;
+mv _plugin plugin;
 Pause;
 
-# These come in renamed to avoid errors during installation
-mv _plugin plugin;
 
 # Build YCM
 #pushd "bundle/YouCompleteMe";
