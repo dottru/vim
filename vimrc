@@ -40,20 +40,12 @@ Bundle 'vim-scripts/FuzzyFinder'
 Bundle 'sjl/vitality.vim'
 Bundle 'kien/rainbow_parentheses.vim'
 
-
-" 'Collaboration' plugins. They work very poorly.
-"Bundle 'Floobits/floobits-vim'
-"Bundle 'FredKSchott/CoVim'
-
-"Bundle 'travitch/hasksyn'
-"Bundle 'moll/vim-node'
-"Bundle 'vim-scripts/surrparen'
 "Bundle 'nathanaelkane/vim-indent-guides'
 "Bundle 'majutsushi/tagbar'
 "Bundle 'ervandew/supertab'
 "Bundle 'scrooloose/nerdtree'
 
-Bundle 'Shougo/neocomplcache'      " replaced with YCM
+Bundle 'Shougo/neocomplcache'
 "Bundle 'bling/vim-airline'         " dunno why I liked this
 "Bundle 'surround.vim'
 "Bundle 'bling/vim-bufferline'
