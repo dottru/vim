@@ -50,6 +50,8 @@ Bundle 'Shougo/neocomplcache'
 "Bundle 'surround.vim'
 "Bundle 'bling/vim-bufferline'
 
+Bundle 'tpope/vim-markdown'
+
 " -------------------------- 
 
 filetype plugin indent on
