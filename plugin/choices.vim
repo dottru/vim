@@ -99,3 +99,8 @@ set viminfo='25,\"128,:128,%,n~/.vim/viminfo
 " status line
 set laststatus=2
 set statusline+=%{fugitive#statusline()}
+
+augroup markdown
+    au!
+    au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+augroup END
