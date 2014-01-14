@@ -1,0 +1,12 @@
+*.swp
+*.swo
+viminfo
+bundle/*
+backup/*
+swap/*
+tags/*
+doc/tags
+undo/*
+lib
+easytags
+viminfo
