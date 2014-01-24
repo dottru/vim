@@ -24,6 +24,8 @@ Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'Shougo/neocomplcache'
 Bundle 'tpope/vim-markdown'
 Bundle 'dottru/vim-util'
+Bundle 'xolox/vim-reload'
+Bundle 'xolox/vim-misc'
 
 ""
 "" Looking for the actual config? Try these files!S
@@ -39,3 +41,5 @@ Bundle 'dottru/vim-util'
 " * ~/.vim/plugin/keybindings.vim
 " * ~/.vim/plugin/rainbow.vim
 " * ~/.vim/plugin/style.vim
+
+autocmd! bufwritepost .vimrc source %

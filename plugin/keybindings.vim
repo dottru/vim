@@ -35,19 +35,37 @@ nnoremap ls     :ls<cr>:b
 nnoremap bd     :bd<cr>
 
 " space to enter a cmd
-nnoremap <Space>    :
+nnoremap <Space>    :noh<cr>:
 
 " rs to re-select last block
 nnoremap rs          gv
 
 nnoremap tt :!ctags -a -R -f ~/.vim/tags/tags `pwd`<cr>
 
+" Map ^r to :python %
+" inoremap  <C-r> <Esc>:w<cr>:!python %<CR>
+" nnoremap <silent> <C-r> <Esc>:w<cr>:!python %<CR>
+
+" Search and replace method
+function! SubCursor() range
+    let s:cur = expand("<cword>")
+
+    let curline = getline('.')
+    call inputsave()
+    let s:repl = input("Subst '".s:cur."' for :: ")
+    call inputrestore()
+
+    execute a:firstline . "," . a:lastline . 's/' . s:cur . '/' . s:repl . '/g'
+endfunction
+
+nnoremap <silent> <C-r> :call SubCursor()<cr>
+
 " movement in insert mode that also exits to normal
 " mode and clears search results
 imap jj <Esc>:call util#Clear("j")<cr>
 imap kk <Esc>:call util#Clear("k")<cr>
-"imap hh <Esc>hhi 
-":call util#Clear("^")<cr>
+
+nnoremap <cr> :noh<cr><cr>
 
 " Had to remap due to accidents 
 imap LL <Esc>:call util#Clear("$")<cr>
@@ -58,7 +76,7 @@ nnoremap ;; A;<Esc>
 
 " Sudo write with WW
 nnoremap WW :call util#SudoWrite()<cr>
-nnoremap ww :w<cr>:echo "If that fails, try sudo write with WW."<cr>
+nnoremap ww :call util#Write()<cr>
 
 " vv to edit .vimrc
 nnoremap <Leader>v <Esc>:echo "This has been remapped to vv, have a good day."<cr>
@@ -122,4 +140,3 @@ vnoremap kj                 <Esc>
 
 inoremap jk                 <Esc>:call util#Save()<cr>
 inoremap kj                 <Esc>:call util#Save()<cr>
-
