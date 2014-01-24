@@ -30,6 +30,7 @@ set wildignore+=*~,*.swp,*.tmp
 set autoread  
 set showmatch
 set wrapmargin=8
+set cursorcolumn
 set cursorline
 
 set title
@@ -98,9 +99,4 @@ set viminfo='25,\"128,:128,%,n~/.vim/viminfo
 
 " status line
 set laststatus=2
-set statusline+=%{fugitive#statusline()}
-
-augroup markdown
-    au!
-    au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
-augroup END
+"set statusline+=%{fugitive#statusline()}

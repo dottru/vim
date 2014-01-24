@@ -76,7 +76,7 @@ nnoremap ;; A;<Esc>
 
 " Sudo write with WW
 nnoremap WW :call util#SudoWrite()<cr>
-nnoremap ww :call util#Write()<cr>
+nnoremap ww :call util#Save()<cr>
 
 " vv to edit .vimrc
 nnoremap <Leader>v <Esc>:echo "This has been remapped to vv, have a good day."<cr>
@@ -124,8 +124,8 @@ inoremap <C-k> <C-w>k
 inoremap <C-l> <C-w>l
 
 " Reload configuration
-nnoremap <Leader>r :source %<CR>
-nnoremap        rr :source %<CR>
+"nnoremap <Leader>r :source %<CR>
+nnoremap        rr :call util#Source(expand("%"))<CR>
 
 " Worth keeping
 nnoremap <F5> :buffers<CR>:buffer<Space>
@@ -140,3 +140,5 @@ vnoremap kj                 <Esc>
 
 inoremap jk                 <Esc>:call util#Save()<cr>
 inoremap kj                 <Esc>:call util#Save()<cr>
+
+nnoremap <Leader>r :MRU<cr>

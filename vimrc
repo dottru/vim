@@ -26,6 +26,7 @@ Bundle 'tpope/vim-markdown'
 Bundle 'dottru/vim-util'
 Bundle 'xolox/vim-reload'
 Bundle 'xolox/vim-misc'
+Bundle 'chriskempson/base16-vim'
 
 ""
 "" Looking for the actual config? Try these files!S
@@ -41,5 +42,3 @@ Bundle 'xolox/vim-misc'
 " * ~/.vim/plugin/keybindings.vim
 " * ~/.vim/plugin/rainbow.vim
 " * ~/.vim/plugin/style.vim
-
-autocmd! bufwritepost .vimrc source %
