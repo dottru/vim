@@ -52,7 +52,6 @@ set cmdheight=2
 " search opts
 set hlsearch
 set ignorecase
-set showmatch
 
 " indent properly
 set smartindent
@@ -100,3 +99,13 @@ set viminfo='25,\"128,:128,%,n~/.vim/viminfo
 " status line
 set laststatus=2
 "set statusline+=%{fugitive#statusline()}
+
+set tags=./tags;./ctags;~/Projects
+let g:tagbar_autofocus = 1
+let g:tagbar_autoclose = 1
+
+let g:tagbar_autopreview = 0
+
+highlight Pmenu ctermbg=238 gui=bold
+
+set autochdir

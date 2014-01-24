@@ -27,6 +27,10 @@ Bundle 'dottru/vim-util'
 Bundle 'xolox/vim-reload'
 Bundle 'xolox/vim-misc'
 Bundle 'chriskempson/base16-vim'
+Bundle 'majutsushi/tagbar'
+Bundle 'vim-scripts/AutoTag'
+Bundle 'mileszs/ack.vim'
+Bundle 'ervandew/supertab'
 
 ""
 "" Looking for the actual config? Try these files!S
@@ -42,3 +46,10 @@ Bundle 'chriskempson/base16-vim'
 " * ~/.vim/plugin/keybindings.vim
 " * ~/.vim/plugin/rainbow.vim
 " * ~/.vim/plugin/style.vim
+
+
+" CTAGS AUTO TAGGERS
+autocmd BufWritePost *
+      \ if filereadable('tags') |
+      \   call system('ctags -a '.expand('%')) |
+      \ endif

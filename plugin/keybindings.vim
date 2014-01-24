@@ -142,3 +142,5 @@ inoremap jk                 <Esc>:call util#Save()<cr>
 inoremap kj                 <Esc>:call util#Save()<cr>
 
 nnoremap <Leader>r :MRU<cr>
+
+nmap <F8>       :TagbarToggle<cr>
