@@ -43,22 +43,21 @@ nnoremap rs          gv
 nnoremap tt :!ctags -a -R -f ~/.vim/tags/tags `pwd`<cr>
 
 " Map ^r to :python %
-" inoremap  <C-r> <Esc>:w<cr>:!python %<CR>
-" nnoremap <silent> <C-r> <Esc>:w<cr>:!python %<CR>
+nnoremap <C-r> <Esc>:w<cr>:!python %<CR>
 
-" Search and replace method
-function! SubCursor() range
-    let s:cur = expand("<cword>")
-
-    let curline = getline('.')
-    call inputsave()
-    let s:repl = input("Subst '".s:cur."' for :: ")
-    call inputrestore()
-
-    execute a:firstline . "," . a:lastline . 's/' . s:cur . '/' . s:repl . '/g'
-endfunction
-
-nnoremap <silent> <C-r> :call SubCursor()<cr>
+" " Search and replace method
+" function! SubCursor() range
+"     let s:cur = expand("<cword>")
+" 
+"     let curline = getline('.')
+"     call inputsave()
+"     let s:repl = input("Subst '".s:cur."' for :: ")
+"     call inputrestore()
+" 
+"     execute a:firstline . "," . a:lastline . 's/' . s:cur . '/' . s:repl . '/g'
+" endfunction
+" 
+" nnoremap <silent> <C-h> :call SubCursor()<cr>
 
 " movement in insert mode that also exits to normal
 " mode and clears search results
@@ -141,6 +140,11 @@ vnoremap kj                 <Esc>
 inoremap jk                 <Esc>:call util#Save()<cr>
 inoremap kj                 <Esc>:call util#Save()<cr>
 
-nnoremap <Leader>r :MRU<cr>
+nnoremap <Leader>m :MRU<cr>
 
-nmap <F8>       :TagbarToggle<cr>
+nmap  tt           :TagbarToggle<cr>
+
+" srv shit via pajtons
+nnoremap <C-s>     :!python -m SimpleHTTPServer<cr>
+
+" nnoremap     <C-f> :Ack

@@ -31,6 +31,8 @@ Bundle 'majutsushi/tagbar'
 Bundle 'vim-scripts/AutoTag'
 Bundle 'mileszs/ack.vim'
 Bundle 'ervandew/supertab'
+Bundle 'nathanaelkane/vim-indent-guides'
+
 
 ""
 "" Looking for the actual config? Try these files!S
