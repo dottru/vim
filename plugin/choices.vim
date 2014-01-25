@@ -109,3 +109,5 @@ let g:tagbar_autopreview = 0
 highlight Pmenu ctermbg=238 gui=bold
 
 set autochdir
+
+let g:bufferline_echo = 1
