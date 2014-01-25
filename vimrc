@@ -1,6 +1,4 @@
 " VIM CONFIGS (C) CHEX.IO 2014
-syntax on
-let g:solarized_termcolors=256
 " ========================================================================
 " ======================================================================== 
 
@@ -34,6 +32,7 @@ Bundle 'vim-scripts/AutoTag'
 Bundle 'mileszs/ack.vim'
 Bundle 'ervandew/supertab'
 Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'bling/vim-bufferline'
 
 
 ""
