@@ -2,6 +2,7 @@
 
 VUNDLE="https://github.com/gmarik/vundle.git";
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+echo "dir :: $DIR"; read;
 
 echo "This *will* destroy ~/.vim"; read;
 pushd $DIR;
