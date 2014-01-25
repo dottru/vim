@@ -9,4 +9,4 @@ augroup reload
 augroup end
 
 nnoremap <Leader>r :source %<CR>
-nnoremap <F5> :source %<CR>
+" nnoremap <F5> :source %<CR>

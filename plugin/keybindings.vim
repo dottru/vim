@@ -127,7 +127,7 @@ inoremap <C-l> <C-w>l
 nnoremap        rr :call util#Source(expand("%"))<CR>
 
 " Worth keeping
-nnoremap <F5> :buffers<CR>:buffer<Space>
+" nnoremap <F5> :buffers<CR>:buffer<Space>
 
 
 " Easy align

@@ -17,6 +17,7 @@ Bundle 'gmarik/vundle'
 
 Bundle 'altercation/vim-colors-solarized'
 
+Bundle 'xolox/vim-easytags'
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/syntastic'
 Bundle 'junegunn/vim-easy-align'
@@ -32,7 +33,7 @@ Bundle 'vim-scripts/AutoTag'
 Bundle 'mileszs/ack.vim'
 Bundle 'ervandew/supertab'
 Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'bling/vim-bufferline'
+Bundle 'bbenmills/vimux'
 
 
 ""
@@ -52,7 +53,8 @@ Bundle 'bling/vim-bufferline'
 
 
 " CTAGS AUTO TAGGERS
-autocmd BufWritePost *
-      \ if filereadable('tags') |
-      \   call system('ctags -a '.expand('%')) |
-      \ endif
+" autocmd BufWritePost *
+"
+"       \ if filereadable('tags') |
+"       \   call system('ctags -a '.expand('%')) |
+"       \ endif:
