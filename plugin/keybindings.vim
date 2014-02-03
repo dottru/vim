@@ -43,7 +43,7 @@ nnoremap rs          gv
 nnoremap tt :!ctags -a -R -f ~/.vim/tags/tags `pwd`<cr>
 
 " Map ^r to :python %
-nnoremap <C-r> <Esc>:w<cr>:!python %<CR>
+" nnoremap <C-r> <Esc>:w<cr>:!python %<CR>
 
 " " Search and replace method
 " function! SubCursor() range

@@ -19,14 +19,16 @@ function! SpellCheckToggle ()
     if &spell == 0
         set spell spelllang=en
 
-        nnoremap []             :SpellCheck<cr>
+        nnoremap <Leader>n      ]s
+        nnoremap <Leader>N      [s
         nnoremap <Leader><Tab>  z=
 
         echom "Spell checking has been enabled."
     else
         set nospell
 
-        nnoremap []                <nop>
+        nnoremap <Leader>n         <nop>
+        nnoremap <Leader>N         <nop>
         nnoremap <Leader><Tab>     <nop>
 
         echom "Spell checking has been disabled."

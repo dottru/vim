@@ -34,6 +34,8 @@ Bundle 'mileszs/ack.vim'
 Bundle 'ervandew/supertab'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'bbenmills/vimux'
+Bundle 'sophacles/vim-bundle-mako'
+Bundle 'junegunn/vim-github-dashboard'
 
 
 ""
