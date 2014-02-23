@@ -1,2 +1,2 @@
-" Leader R will exec % in bash
-nnoremap <Leader>r :!bash %<CR>
+" Map ^r to :bash %
+nnoremap <C-r> <Esc>:w<cr>:!bash %<cr>

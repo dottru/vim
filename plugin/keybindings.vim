@@ -42,9 +42,6 @@ nnoremap rs          gv
 
 nnoremap tt :!ctags -a -R -f ~/.vim/tags/tags `pwd`<cr>
 
-" Map ^r to :python %
-nnoremap <C-r> <Esc>:w<cr>:!python %<CR>
-
 " " Search and replace method
 " function! SubCursor() range
 "     let s:cur = expand("<cword>")
@@ -127,7 +124,8 @@ inoremap <C-l> <C-w>l
 nnoremap        rr :call util#Source(expand("%"))<CR>
 
 " Worth keeping
-nnoremap <F5> :buffers<CR>:buffer<Space>
+nnoremap <F5> :!
+nnoremap <F6> :buffers<CR>:buffer<Space>
 
 
 " Easy align
@@ -144,7 +142,57 @@ nnoremap <Leader>m :MRU<cr>
 
 nmap  tt           :TagbarToggle<cr>
 
-" srv shit via pajtons
-nnoremap <C-s>     :!python -m SimpleHTTPServer<cr>
+" Update n installs new plugins.
+nnoremap <C-i> :w<cr>:source %<cr>:BundleInstall<cr>:qall<cr>
 
 " nnoremap     <C-f> :Ack
+
+" Preview dir in chrome using webserver
+" Preview dir in chrome using webserver
+let g:local_srv_started = "0"
+
+function! HTTPServe ()
+    :!tmux new -d "python -m SimpleHTTPServer"
+    let g:local_srv_started = "1"
+endfunction
+
+function! HTTPKill ()
+    :!killall -9 python
+    let g:local_srv_started = "0"
+endfunction
+
+function! HTTPOpen ()
+    if !exists("g:local_srv_started") || g:local_srv_started == "0"
+        echo "Please :call HTTPServe() before opening."
+    else
+        :!open -a Google\ Chrome 'http://localhost:8000/'
+    endif
+endfunction
+
+nnoremap <F8>s :call HTTPServe()<cr>
+nnoremap <F8>k :call HTTPKill()<cr>
+nnoremap <F8>o :call HTTPOpen()<cr>
+
+nnoremap <F8>v :call HTTPOpen(
+
+nnoremap <Leader><Leader> :MRU<cr>
+nnoremap <C-q>            :q<cr>
+
+" Toggle line nos
+nnoremap <Leader>n :set number! number?     
+
+" Toggle auto chdir to pwd
+nnoremap <Leader>c :set autochdir! autochdir?
+
+" Maximises window
+nnoremap MM    :only<cr>
+
+" wtf does this do
+" nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
+
+" Tab navigation
+nnoremap <C-t>     :tabnew<cr>
+nnoremap <C-Left>  :tabprev<cr>
+nnoremap <C-Right> :tabnext<cr>
+
+nnoremap <C-t> :call util#SessionList()
