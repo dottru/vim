@@ -120,3 +120,5 @@ set autochdir
 let g:rooter_patterns = [ '.project/' ]
 
 set statusline=[%n]\ %<%F\ \ \ [%M%R%H%W%Y][%{&ff}]\ \ %=\ line:%l/%L\ col:%c\ \ \ %p%%\ \ \ @%{strftime(\"%H:%M:%S\")}
+
+let g:bufferline_echo = 1

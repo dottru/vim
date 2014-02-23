@@ -18,10 +18,10 @@ let g:syntastic_always_populate_loc_list=1
 
 " Tags file
 set tagrelative
-set tags=./.vim/tags/tags,./tags
+set tags=./tags
 
 " Easytags opts
-let g:easytags_file='~/.vim/tags/tags'
+let g:easytags_file='./tags'
 let g:easytags_always_enabled = 1
 let g:easytags_autorecurse = 1
 let g:easytags_resolve_links = 1

@@ -35,6 +35,7 @@ Bundle 'gmarik/vundle'
 
 Bundle 'altercation/vim-colors-solarized'
 
+Bundle 'xolox/vim-easytags'
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/syntastic'
 Bundle 'junegunn/vim-easy-align'
@@ -86,3 +87,26 @@ autocmd * :Rooter
 	        :set guifont=Source\ Code\ Pro:h13
 	    endif
 	endif
+
+""
+"" Looking for the actual config? Try these files!S
+""
+"" (hint: Press while hovering over a filename to go to that file,
+""        When you're done, use Control-o to get back here. ) 
+
+" * ~/.vim/plugin/autocmds.vim		    - Useless.
+" * ~/.vim/plugin/choices.vim		    - Random sets/lets.
+" * ~/.vim/plugin/completion.vim        - Responsible for autocompletion
+" * ~/.vim/plugin/globals.vim           - Sets global opts.
+" * ~/.vim/plugin/keybindings-git.vim
+" * ~/.vim/plugin/keybindings.vim
+" * ~/.vim/plugin/rainbow.vim
+" * ~/.vim/plugin/style.vim
+
+
+" CTAGS AUTO TAGGERS
+" autocmd BufWritePost *
+"
+"       \ if filereadable('tags') |
+"       \   call system('ctags -a '.expand('%')) |
+"       \ endif:
