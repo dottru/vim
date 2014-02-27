@@ -1,6 +1,6 @@
 # A handy vim config
 
-## (This tiome, for Macs.)
+## (This time, for Macs.)
 
 Having recently bought myself a macbook pro, I needed to branch off these vim configs for OSX. This repository is the culmination of those efforts.
 

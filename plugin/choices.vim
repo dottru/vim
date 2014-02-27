@@ -1,8 +1,5 @@
-" Compat mode is for losers
+" Compacmode is for losers
 set nocompatible 
-
-" Loads filetype defs from .vim/ftplugin/*.vim
-filetype plugin indent on
 
 " Comma is pretty common these days for <Leader>
 let mapleader = ","
@@ -108,6 +105,17 @@ let g:tagbar_autopreview = 0
 
 highlight Pmenu ctermbg=238 gui=bold
 
+let g:gist_open_browser_after_post = 1
+let g:gist_browser_command = 'open -a Google\ Chrome %URL%'
+
+let g:shell = '/bin/bash'
+
+set exrc
+set secure
 set autochdir
+
+let g:rooter_patterns = [ '.project/' ]
+
+set statusline=[%n]\ %<%F\ \ \ [%M%R%H%W%Y][%{&ff}]\ \ %=\ line:%l/%L\ col:%c\ \ \ %p%%\ \ \ @%{strftime(\"%H:%M:%S\")}
 
 let g:bufferline_echo = 1
