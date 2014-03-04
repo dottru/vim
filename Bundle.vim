@@ -18,6 +18,8 @@ Bundle 'vim-scripts/mru.vim'
 Bundle 'jeetsukumaran/vim-buffergator'
 Bundle 'Shougo/neocomplcache'
 Bundle 'tpope/vim-fugitive'
+Bundle 'mhinz/vim-tmuxify'
+Bundle 'regedarek/ZoomWin'
 
 
 " BUNDLES - DISABLED

@@ -96,70 +96,21 @@ inoremap <C-j> <C-w>j
 inoremap <C-k> <C-w>k
 inoremap <C-l> <C-w>l
 
-" Reload configuration
-"nnoremap <Leader>r :source %<CR>
-" TODO - USE A CMD
-nnoremap        rr :call util#Source(expand("%"))<CR>
-
-" Worth keeping
-noremap <F7> :buffers<CR>:buffer<Space>
-nnoremap <Leader>bs :buffers<CR>:buffer<Space>
+" Replace buffer switcher with
+"       <Leader>b for bufferr buffers
+"       <Leader>t for tabs
 
 " Easy align
 vnoremap <silent> <Enter> :EasyAlign<Enter>
 
-" Experimenting with this
-vnoremap jk                 <Esc>
-vnoremap kj                 <Esc>
-
-inoremap jk                 <Esc>:call util#Save()<cr>
-inoremap kj                 <Esc>:call util#Save()<cr>
-
 " this is damn near invaluable
-nnoremap <Leader>m :MRU<cr>
-
-nmap  tt           :TagbarToggle<cr>
+nnoremap <Leader>r :MRU<cr>
 
 " Update n installs new plugins.
-nnoremap <C-i> :w<cr>:source %<cr>:BundleInstall<cr>:qall<cr>
-
-" nnoremap     <C-f> :Ack
-
-" Preview dir in chrome using webserver
-let g:local_srv_started = "0"
-
-function! HTTPServe ()
-    :!tmux new -d "python -m SimpleHTTPServer"
-    let g:local_srv_started = "1"
-endfunction
-
-function! HTTPKill ()
-    :!killall -9 python
-    let g:local_srv_started = "0"
-endfunction
-
-function! HTTPOpen ()
-    if !exists("g:local_srv_started") || g:local_srv_started == "0"
-        echo "Please :call HTTPServe() before opening."
-    else
-        :!open -a Google\ Chrome 'http://localhost:8000/'
-    endif
-endfunction
-
-nnoremap <F8>s :call HTTPServe()<cr>
-nnoremap <F8>k :call HTTPKill()<cr>
-nnoremap <F8>o :call HTTPOpen()<cr>
-
-nnoremap <F8>v :call HTTPOpen(
-
-nnoremap <Leader><Leader> :MRU<cr>
-nnoremap <C-q>            :q<cr>
+nnoremap <Leader>i :w<cr>:source %<cr>:BundleInstall<cr>:qall<cr>
 
 " Toggle line nos
-nnoremap <Leader>n :set number! number?     
-
-" Toggle auto chdir to pwd
-nnoremap <Leader>c :set autochdir! autochdir?
+nnoremap <Leader>n :set number!
 
 " Maximises window
 nnoremap MM    :only<cr>

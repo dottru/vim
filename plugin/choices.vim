@@ -10,12 +10,12 @@ let &undodir   = vimdir . '/undo'
 let &tags      = vimdir.'/tags,./tags'
 
  " Leader mappings
- let mapleader = ","         " Comma is pretty common these days for <Leader>
+ let mapleader      = ","         " Comma is pretty common these days for <Leader>
  let localmapleader = '\'    " Backslash for local leader
  
- let g:textwidth  = 90      " Text wrap width
- let &colorcolumn = g:textwidth
- let &textwidth   = g:textwidth
+ let g:textwidth    = 90      " Text wrap width
+ let &colorcolumn   = g:textwidth
+ let &textwidth     = g:textwidth
  
  set nocompatible            " nocompat sets LOADS of options
  
@@ -116,3 +116,8 @@ syntax off
 syntax on
 filetype off
 filetype on
+
+" tmuxify options
+let g:tmuxify_custom_command = 'tmux split-window -d -l 10'
+
+let g:tmuxify_run = { 'sh': 'bash %', 'py': 'python %' }
