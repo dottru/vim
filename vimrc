@@ -1,8 +1,9 @@
 " Vundle cfg
 " ==========
 
-set nocompatible               
-filetype off                  
+
+set nocompatible            "~ skip compat as it breaks loads of new functionality
+filetype off                "~ turn off tiletype detection while vundle does a thing
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -28,25 +29,17 @@ source ~/.vim/Bundle.vim
 " ----------
 
 
-" CTAGS AUTO TAGGERS
-autocmd BufWritePost *
-      \ if filereadable('tags') |
-      \   call system('ctags -a '.expand('%')) |
-      \ endif 
-"autocmd * :Rooter
-
-" autocmd BufEnter * :syntax sync fromstart
-
-" This sets winlocal pwd instead of global pwd
-" autocmd BufEnter * silent! lcd %:p:h 
+" CTAGS AUTO TAGGERS - TODO: re-enable ctags on bufwrite
+" autocmd BufWritePost *
+"       \ if filereadable('tags') |
+"       \   call system('ctags -a '.expand('%')) |
+"       \ endif 
+" "autocmd * :Rooter
 
 " Add the current file's directory to the path if not already present.
-" autocmd BufRead *
-" \     let s:tempPath=escape(escape(expand("%:p:h"), ' '), '\ ') |
-" \     exec "set path+=".s:tempPath
-
-
-
+    " autocmd BufRead *
+    " \     let s:tempPath=escape(escape(expand("%:p:h"), ' '), '\ ') |
+    " \     exec "set path+=".s:tempPath
 
 " CTAGS AUTO TAGGERS
 " autocmd BufWritePost *
