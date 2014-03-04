@@ -57,7 +57,7 @@ nnoremap WW :call util#SudoWrite()<cr>
 
 " vv to edit .vimrc
 nnoremap <Leader>v <Esc>:echo "This has been remapped to vv, have a good day."<cr>
-nnoremap vv :chdir ~/.vim<Bar>e $MYVIMRC<CR>
+nnoremap vv :chdir ~/.vim<Bar>vsp $MYVIMRC<CR>
 
 " insta quit
 inoremap qq        <Esc>:qa!<CR>

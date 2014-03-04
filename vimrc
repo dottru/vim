@@ -1,7 +1,6 @@
 " Vundle cfg
 " ==========
 
-
 set nocompatible            "~ skip compat as it breaks loads of new functionality
 filetype off                "~ turn off tiletype detection while vundle does a thing
 
@@ -47,3 +46,5 @@ source ~/.vim/Bundle.vim
 "       \ if filereadable('tags') |
 "       \   call system('ctags -a '.expand('%')) |
 "       \ endif:
+
+" vim: set filetype=vicfg

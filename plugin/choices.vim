@@ -80,7 +80,7 @@ let &tags      = vimdir.'/tags,./tags'
  
  " Store viminfo under scm
  " "register-lines 'marks :commands % buf list n~ file-name, / skip search
- set viminfo=\"128,'25,:256,%,n~$HOME/.vim/viminfo
+ set viminfo=\"128,'25,:256,%,n$HOME/.vim/viminfo
  
  " Tagbar options
  let g:tagbar_autofocus   = 1
