@@ -1,3 +1,5 @@
+" vim: set filetype=bundle
+"
 " BUNDLES - ENABLED
 " =================
 
@@ -9,23 +11,25 @@ Bundle 'fholgado/minibufexpl.vim'
 Bundle 'Lokaltog/powerline'
 Bundle 'scrooloose/syntastic'
 Bundle 'junegunn/vim-easy-align'
-Bundle 'Shougo/neocomplcache'
 Bundle 'tpope/vim-markdown'
 Bundle 'airblade/vim-rooter'
 Bundle 'vim-scripts/SideBar.vim'
 Bundle 'vim-scripts/mru.vim'
 Bundle 'jeetsukumaran/vim-buffergator'
+Bundle 'Shougo/neocomplcache'
+Bundle 'tpope/vim-fugitive'
 
 
 " BUNDLES - DISABLED
 " =================
 
+"Bundle 'vim-scripts/Vim-R-plugin'
 "Bundle 'tpope/vim-fugitive'
 "Bundle 'nathanaelkane/vim-indent-guides'
 "Bundle 'majutsushi/tagbar'
 "Bundle 'ervandew/supertab'
 "Bundle 'scrooloose/nerdtree'
-"Bundle 'bling/vim-airline'        
+"Bundle 'bling/vim-airline'
 "Bundle 'surround.vim'
 "Bundle 'bling/vim-bufferline'
 "Bundle 'xolox/vim-easytags'
@@ -39,8 +43,3 @@ Bundle 'jeetsukumaran/vim-buffergator'
 
 " Was causing hella bugs
 " Bundle 'Valloric/YouCompleteMe'
-
-
-" -------------------------------------------------------
-" The following line defines a command to be run on save.
-" :modified: vim +BundleInstall +qall

@@ -3,6 +3,7 @@
 " Set vim directory var
 let vimdir     = $HOME . '/.vim'
 
+let &viewdir   = vimdir . '/view'
 let &backupdir = vimdir . '/backup'
 let &directory = vimdir . '/swap'
 let &undodir   = vimdir . '/undo'
@@ -12,14 +13,16 @@ let &tags      = vimdir.'/tags,./tags'
  let mapleader = ","         " Comma is pretty common these days for <Leader>
  let localmapleader = '\'    " Backslash for local leader
  
- let g:textwidth   = 90      " Text wrap width
+ let g:textwidth  = 90      " Text wrap width
  let &colorcolumn = g:textwidth
- let &textwidth    = g:textwidth
+ let &textwidth   = g:textwidth
  
  set nocompatible            " nocompat sets LOADS of options
  
  set shortmess=at            " skip startup message / splash screen
  set showmode                " Show the current vim mode
+ set modeline                " Enable using modelines
+ set modelines=5             " Allow this many mode lines
  
  set splitbelow splitright    " Window split options
  set whichwrap=<,>,h,l       " Adjust which movements will wrap to nextline
@@ -96,7 +99,7 @@ let &tags      = vimdir.'/tags,./tags'
  " Statusline configuration
  set statusline=%<%f\                     " Filename
  set statusline+=%w%h%m%r                 " Options
- set statusline+=%{fugitive#statusline()} " Git Hotness
+ "set statusline+=%{fugitive#statusline()} " Git Hotness
  set statusline+=\ [%{&ff}/%Y]            " filetype
  set statusline+=\ [%{getcwd()}]          " current dir
  set statusline+=%#warningmsg#
@@ -108,3 +111,8 @@ let &tags      = vimdir.'/tags,./tags'
  " Control characters to show invisiburu shit like EOL \s or tabs, etc
 set list
 set listchars+=tab:>-,trail:-,precedes:<,extends:>
+
+syntax off
+syntax on
+filetype off
+filetype on

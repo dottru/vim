@@ -1,0 +1,10 @@
+function! SetEvents()
+    if exists( g:project_root_dir )
+        autocmd BufWinLeave *.* mkview!
+        autocmd BufWinEnter *.* silent loadview
+    endif
+endfunction
+
+if exists( g:project_root_dir )
+    autocmd VimEnter * call SetEvents()
+endif

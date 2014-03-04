@@ -46,5 +46,6 @@ source ~/.vim/Bundle.vim
 "       \ if filereadable('tags') |
 "       \   call system('ctags -a '.expand('%')) |
 "       \ endif:
-
-" vim: set filetype=vicfg
+"
+runtime $HOME/.vim/ftplugin/*.vim
+filetype plugin indent on
