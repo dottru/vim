@@ -123,4 +123,4 @@ nnoremap <C-t>     :tabnew<cr>
 nnoremap <C-Left>  :tabprev<cr>
 nnoremap <C-Right> :tabnext<cr>
 
-nnoremap <C-t> :call util#SessionList()
+nnoremap MM        :ZoomWin<cr>
