@@ -14,6 +14,7 @@ Bundle 'tpope/vim-markdown'
 Bundle 'airblade/vim-rooter'
 Bundle 'vim-scripts/SideBar.vim'
 Bundle 'vim-scripts/mru.vim'
+Bundle 'jeetsukumaran/vim-buffergator'
 
 
 " BUNDLES - DISABLED
