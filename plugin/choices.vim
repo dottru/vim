@@ -1,5 +1,8 @@
 ﻿scriptencoding utf-8
 
+
+let g:have_tweaked_choices=1
+
 " Set vim directory var
 let vimdir     = $HOME . '/.vim'
 
@@ -17,10 +20,15 @@ let &tags      = vimdir.'/tags,./tags'
  let &colorcolumn   = g:textwidth
  let &textwidth     = g:textwidth
  
+ set autoread autowrite      " Read and write buffers w/o intervention
+ 
  set nocompatible            " nocompat sets LOADS of options
  
- set shortmess=at            " skip startup message / splash screen
+ set showcmd                 " shows cmd characters before executing
  set showmode                " Show the current vim mode
+
+ set shortmess=at            " skip startup message / splash screen
+
  set modeline                " Enable using modelines
  set modelines=5             " Allow this many mode lines
  
@@ -35,8 +43,6 @@ let &tags      = vimdir.'/tags,./tags'
  set laststatus=2            " Show statusline even when only one window is shown
  set backspace=2             " fixes backspace for iterm and osx cli/gui
  set autoindent              " indent lines automatically based on context
- set showcmd                 " shows cmd characters before executing
- set autoread autowrite      " Read and write buffers w/o intervention
  set nostartofline           " prevent cursor from jumping e'rywhar
  set number                  " View line numbers
  set hidden                  " let buffers have unsaved changes
@@ -59,7 +65,7 @@ let &tags      = vimdir.'/tags,./tags'
  
  set showmatch               " Hilight matching bracket when cursor is over its mate
  set wrapmargin=0            " wrap text ${X} characters from edge, horrible setting
- set cmdheight=2             " 
+ set cmdheight=2             " How tall the command line is
  
  " search opts
  set incsearch hlsearch      " Incremental search / Hilight search

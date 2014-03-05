@@ -1,5 +1,10 @@
-" Vundle cfg
-" ==========
+"" 
+""       (_)
+"" __   ___ _ __ ___
+"" \ \ / / | '_ ` _ \
+""  \ V /| | | | | | |
+""   \_/ |_|_| |_| |_|
+"" 
 
 set nocompatible            "~ skip compat as it breaks loads of new functionality
 filetype off                "~ turn off tiletype detection while vundle does a thing

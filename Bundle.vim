@@ -6,6 +6,9 @@
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'junegunn/seoul256.vim'
 
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/gist-vim'
+
 Bundle 'xolox/vim-misc'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'Lokaltog/powerline'
