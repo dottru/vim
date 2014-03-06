@@ -11,4 +11,8 @@ lib
 easytags
 viminfo
 tags
-.un~
+*.*.un\~
+-Mini*
+.net*
+MODIFIED
+.project
