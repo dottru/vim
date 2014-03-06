@@ -1,5 +1,6 @@
 let g:project_look_dir = ".project"
 let g:project_dir      = ""
+let g:save_dir         = ""
 
 command! -nargs=1 NewProject call NewProject(<args>)
 function! NewProject( dir )
@@ -32,7 +33,7 @@ endfunction
 
 function! SetSaveDirs ( prefix )
     if ( a:prefix != "" )
-        let l:dirs = ["view", "backup", "swap", "undo", "tags"]
+        let l:dirs = ["view", "backup", "swap", "undo", "tags", "sess"]
 
         " Create save dirs
         "echom "Setting save dir prefix to " . a:prefix
@@ -47,43 +48,37 @@ function! SetSaveDirs ( prefix )
         endfor
 
         " Set save locs for all these.
-        let &viewdir   = a:prefix . '/view'
-        let &backupdir = a:prefix . '/backup'
-        let &directory = a:prefix . '/swap'
-        let &undodir   = a:prefix . '/undo'
-        let &tags     =  a:prefix . '/tags,./tags'
+        let &viewdir       = a:prefix . '/view'
+        let &backupdir     = a:prefix . '/backup'
+        let &directory     = a:prefix . '/swap'
+        let &undodir       = a:prefix . '/undo'
+        let &tags          = a:prefix . '/tags'
+        let g:session      = a:prefix . '/Session.vim'
 
-        exec "cd .."
+        exec "cd " . g:project_dir
     else
         "echom "No project dir provided."
     endif
 endfunction
 
 function! FindProjectRoot ()
-    let l:pf = finddir( g:project_look_dir, '.;' ) " search upward for a:0
-    let l:apf = expand("%:p:h")
+    exec "lcd " . expand("%:p:h")
 
-    if expand('%:p') == $MYVIMRC
-        let l:pf = expand("~/.vim/.project")
+    let pf = ( expand('%:p') =~ ".*vimrc?$" ) ?  expand("~/.vim/.project") :  finddir(g:project_look_dir, '.;' )
+
+    exec "lcd " . pf
+    let g:save_dir = getcwd()
+    exec "lcd .."
+    let g:project_dir = getcwd()
+
+    if filereadable(g:project_dir."/vimrc")
+        exec "source " . g:project_dir . "/vimrc"
     endif
 
-    exec "!cd " . l:apf
+    call SetVimInfo( g:save_dir . "/viminfo" )
 
-    if ( l:pf =~ "^$" )
-        " Never found a project file
-        "echom "Not inside of any project. State saving will be disabled."
-    else
-        "echom "Found project root @ " . l:pf
-        exec "cd " . l:pf
-        exec "cd .."
-
-        let cwd = getcwd()
-        let g:project_root_dir = cwd!="" ? cwd : expand("~/.vim")
-        echom "Found project at " . g:project_root_dir
-    endif
-
-    call SetSaveDirs( l:pf )
+    call SetSaveDirs( g:save_dir )
     call AutoViews()
 endfunction
 
-autocmd BufWinEnter * call FindProjectRoot()
+autocmd WinEnter * call FindProjectRoot()

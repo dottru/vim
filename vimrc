@@ -40,3 +40,6 @@ source ~/.vim/bundles.vim
 "       ~/.vim/plugin/project.vim        - Per-project config support
 
 " ----------
+
+filetype plugin indent on
+syntax on

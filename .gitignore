@@ -1,4 +1,4 @@
-*.swpQQQQ
+*.swp
 *.swo
 viminfo
 bundle/*
@@ -16,3 +16,4 @@ tags
 .net*
 MODIFIED
 .project
+Session.vim

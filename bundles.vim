@@ -46,6 +46,6 @@ Bundle 'dr-chip-vim-scripts/ZoomWin'
 "Bundle 'vim-scripts/FuzzyFinder'
 "Bundle 'sjl/vitality.vim'
 "Bundle 'kien/rainbow_parentheses.vim'
-
+"Bundle 'powerman/vim-plugin-autosess'
 " Was causing hella bugs
 " Bundle 'Valloric/YouCompleteMe'

@@ -43,4 +43,10 @@ fun! UpdateBundles()
     endif
 endfun
 
+fun! BI()
+    exec 'BundleInstall'
+    exec 'qall'
+endfun
+command! Update call BI()
+
 call InitVundle()
