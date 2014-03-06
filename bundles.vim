@@ -1,7 +1,9 @@
-" vim: set filetype=bundle
-"
 " BUNDLES - ENABLED
 " =================
+
+" TODO:
+"  - Add function for viewing bundles
+"  - In that buffer, make shortcuts for adding and removing bundles
 
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'junegunn/seoul256.vim'
@@ -22,8 +24,7 @@ Bundle 'jeetsukumaran/vim-buffergator'
 Bundle 'Shougo/neocomplcache'
 Bundle 'tpope/vim-fugitive'
 Bundle 'mhinz/vim-tmuxify'
-Bundle 'regedarek/ZoomWin'
-
+Bundle 'dr-chip-vim-scripts/ZoomWin'
 
 " BUNDLES - DISABLED
 " =================

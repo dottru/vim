@@ -1,90 +1,69 @@
 " vim keyboard shortcuts
 " ----------------------
 
-" ------------------------------------------------------
-"   || To navigate, put your cursor over the text inside
-"   || brackets and press * to get there.
-"
-"   ||  You can retur with Control-O.
-" ------------------------------------------------------
-
-
 " INDEX
 " =====
 "   1. Normal mode - [normal-mode]
 "   2. Insert mode - [insert-mode]
 "   3. Visual mode - [visual-mode]
 
-
-
-
+" =========================
 " NORMAL MODE *normal-mode*
 " =========================
 
-" 'Maximise' / 'Minimise' a window
-map :resize     <Esc>:echo "Use MM to stretch a window or mm to shrink one. voila~"<cr>
-nnoremap MM     <C-w>10+
-nnoremap mm     <C-w>10-
+" -- COMMANDS --
+command! Grow  :echom "Use 10gh to expand 10 cols. 5gv to grow 5 rows vert."
+command! Shink :echom "Use 10sh to shrink 10 cols. 5gv to shrink 5 rows vert."
+command! Align :echom "Select a block visually and press <Enter><Space> to align on spaces or <Enter>: to align on colons"
 
-" ! to start entering a shell cmd
-nnoremap !      :!
+" -- COMMON ERROR --
+" Kill hilights $$ Shortcuts to Write
+command! Write     :noh<Bar>w! %
+command! W Write
+command! Q qall
+nnoremap <cr>      :noh<cr>
+nnoremap ww        :Write<cr>
+inoremap ww        <C-o>:Write<cr>
 
-" b to browse, ls to quick-switch
-" nnoremap b      <Esc>:FufBuffer<cr> " This got annoying so goddamn fast.
-nnoremap ls     :ls<cr>:b 
-nnoremap bd     :bd<cr>
+" -- PRESERVE RE-SELECT
+nmap     rs gv
 
-" space to enter a cmd
-nnoremap <Space>    :noh<cr>:
+" -- RESIZING --
+nnoremap gh <C-w>>
+nnoremap gv <C-w>+
+nnoremap sh <C-w><
+nnoremap sv <C-w>-
 
-" rs to re-select last block
+" -- ALIGN --
+vnoremap <silent> <Enter> :EasyAlign<Enter>
+
+" -- CONVENIENCE COMMAND
+nnoremap 11       !!
+nnoremap <Space>  :noh<cr>:
+
+" -- RE-SELECT --
 nnoremap rs          gv
 
-nnoremap tt :!ctags -a -R -f ~/.vim/tags/tags `pwd`<cr>
+" -- SUDOWRITE --
+command! Sudowrite :w !sudo tee > /dev/null %
+nnoremap w!! :sudowrite<cr>
 
-" a god-send
-nnoremap <cr> :noh<cr><cr>
+" -- OPEN $MYVIMRC --
+nnoremap <Leader>v <Esc>:echo "This has been remapped to ve (edit), vv (vsp), and vs (horiz)."<cr>
+nnoremap ve :e   $MYVIMRC<cr>
+nnoremap vv :vsp $MYVIMRC<cr>
+nnoremap vs :sp  $MYVIMRC<cr>
 
-" Had to remap due to accidents 
-imap LL <Esc>:call util#Clear("$")<cr>
+" -- RAGEQUIT --
+inoremap qq        <C-o>:qa!<cr>
+nnoremap QQ        <C-o>:qa!<cr>
 
-" Double ; appends one to the current line
-imap ;; <Esc>A;
-nnoremap ;; A;<Esc>
+" -- BUFFER CLOSE --
+nnoremap bd                 :bd<cr>
 
-" Sudo write with WW
-nnoremap WW :call util#SudoWrite()<cr>
-
-" vv to edit .vimrc
-nnoremap <Leader>v <Esc>:echo "This has been remapped to vv, have a good day."<cr>
-nnoremap vv :chdir ~/.vim<Bar>vsp $MYVIMRC<CR>
-
-" insta quit
-inoremap qq        <Esc>:qa!<CR>
-nnoremap QQ        <Esc>:qa!<CR>
-
-" Sick and tired of that typo
-command! W w
-command! Q q
-
-" <Leader>c closes buffer :: <Leader>C forces close
-nnoremap <Leader>c          :bd<CR>
-inoremap <Leader>c     <Esc>:bd<CR>
-
-" \h shortcuts to :help 
+" -- HELP --
 inoremap <Leader>h          <Esc>:help 
-
-" Buffer navigation
-nnoremap <Leader>1 :b1<CR>
-nnoremap <Leader>2 :b2<CR>
-nnoremap <Leader>3 :b3<CR>
-nnoremap <Leader>4 :b4<CR>
-nnoremap <Leader>5 :b5<CR>
-nnoremap <Leader>6 :b6<CR>
-nnoremap <Leader>7 :b7<CR>
-nnoremap <Leader>8 :b8<CR>
-nnoremap <Leader>9 :b9<CR>
-nnoremap <Leader>0 :b10<CR>
+nnoremap H              :help 
 
 "" Convenience shortcuts. C-hjkl for movement 
 nnoremap <C-h> <C-w>h
@@ -96,18 +75,22 @@ inoremap <C-j> <C-w>j
 inoremap <C-k> <C-w>k
 inoremap <C-l> <C-w>l
 
-" Replace buffer switcher with
-"       <Leader>b for bufferr buffers
-"       <Leader>t for tabs
+inoremap JK  jk
+inoremap KJ  kj
 
-" Easy align
-vnoremap <silent> <Enter> :EasyAlign<Enter>
+" It confuses my fingers for  to save and return while kj saves and escapes
+inoremap jk  <C-o>:w<cr>
+inoremap kj  <Esc>:w<cr>
 
-" this is damn near invaluable
-nnoremap <Leader>r :MRU<cr>
+" -- JUMPS --
+nnoremap J   <C-d>
+nnoremap K   <C-u>
 
-" Update n installs new plugins.
-nnoremap <Leader>i :w<cr>:source %<cr>:BundleInstall<cr>:qall<cr>
+" -- RECENT FILES --
+" \r - recent
+" \b - buffers
+" \t - tabs
+nnoremap <LocalLeader>r :MRU<cr>
 
 " Toggle line nos
 nnoremap <Leader>n :set number!
@@ -115,12 +98,15 @@ nnoremap <Leader>n :set number!
 " Maximises window
 nnoremap MM    :only<cr>
 
-" wtf does this do
-" nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
-
 " Tab navigation
 nnoremap <C-t>     :tabnew<cr>
-nnoremap <C-Left>  :tabprev<cr>
-nnoremap <C-Right> :tabnext<cr>
+nnoremap <C-p>     :tabprev<cr>
+nnoremap <C-n>     :tabnext<cr>
+inoremap <C-t>     <C-o>:tabnew<cr>
+nnoremap <C-p>     <C-o>:tabprev<cr>
+nnoremap <C-n>     <C-o>:tabnext<cr>
 
+" Maximise win
 nnoremap MM        :ZoomWin<cr>
+
+" TODO: insert a modeline to source this onwrite

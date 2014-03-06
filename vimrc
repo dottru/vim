@@ -1,56 +1,42 @@
-"" 
+""
 ""       (_)
 "" __   ___ _ __ ___
 "" \ \ / / | '_ ` _ \
 ""  \ V /| | | | | | |
 ""   \_/ |_|_| |_| |_|
-"" 
+""
 
-set nocompatible            "~ skip compat as it breaks loads of new functionality
-filetype off                "~ turn off tiletype detection while vundle does a thing
+" TASKS
+"  TODO: Add autocmd on write of any file under ~/.vim to resource $myvimrc
+"  TODO: Add git auto add/commit/push
+"  TODO: Use gutters in some clever way
+"
+source ~/.vim/setup.vim
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-source ~/.vim/Bundle.vim
+source ~/.vim/vundle.vim
+source ~/.vim/bundles.vim
 
-" VIM Configs
-" -----------
+" User settings
+"   - Use gf to jump to a file, <C-o> to return here.
+" =====================================================
 
-"   (Press gf while hovering over a filename to go to that file,
-"         When you're done, use C-o to get back here. ) 
-"   MUST BE IN YOUR .vim DIR TONWORK
+" BUNDLE CONFIGS
+"       ~/.vim/vundle.vim                   - Initialises vundle for you
+"       ~/.vim/bundles.vim                  - Loads your specific set of plugins
 
-"    plugin/autocmds.vim                    - For future use.
+" USER CONFIGS
+"       ~/.vim/plugin/style.vim          - Visual settings
+"       ~/.vim/plugin/keybindings.vim    - User keybindings
+"       ~/.vim/plugin/choices.vim        - Options and vars. All sets and lets.
+"       ~/.vim/plugin/console.vim        - tmux keybindings / repl support
+"       ~/.vim/plugin/autocmds.vim       - Event definitions
+"       ~/.vim/plugin/completion.vim     - Responsible for code completion
+"       ~/.vim/plugin/tags.vim           - Options for the tag files
 
-"       ~/.vim/plugin/autocmds.vim		    - Useless.
-"       ~/.vim/plugin/choices.vim		    - Random sets/lets.
-"       ~/.vim/plugin/completion.vim        - Responsible for autocompletion
-"       ~/.vim/plugin/globals.vim           - Sets global opts.
-"       ~/.vim/plugin/keybindings.vim
-"       ~/.vim/plugin/rainbow.vim
-"       ~/.vim/plugin/style.vim
+" MOVE TO PLUGINS
+"       ~/.vim/plugin/session.vim        - Allows saving and loading of sessions
+"       ~/.vim/plugin/asciiart.vim       - Inserts ascii art like the header in vimrc
+"       ~/.vim/plugin/spelling.vim       - Spell checking
+"       ~/.vim/plugin/project.vim        - Per-project config support
 
 " ----------
-
-
-" CTAGS AUTO TAGGERS - TODO: re-enable ctags on bufwrite
-" autocmd BufWritePost *
-"       \ if filereadable('tags') |
-"       \   call system('ctags -a '.expand('%')) |
-"       \ endif 
-" "autocmd * :Rooter
-
-" Add the current file's directory to the path if not already present.
-    " autocmd BufRead *
-    " \     let s:tempPath=escape(escape(expand("%:p:h"), ' '), '\ ') |
-    " \     exec "set path+=".s:tempPath
-
-" CTAGS AUTO TAGGERS
-" autocmd BufWritePost *
-"
-"       \ if filereadable('tags') |
-"       \   call system('ctags -a '.expand('%')) |
-"       \ endif:
-"
-runtime $HOME/.vim/ftplugin/*.vim
-filetype plugin indent on

@@ -1,4 +1,4 @@
-*.swp
+*.swpQQQQ
 *.swo
 viminfo
 bundle/*
@@ -11,3 +11,4 @@ lib
 easytags
 viminfo
 tags
+.un~
