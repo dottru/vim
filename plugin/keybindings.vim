@@ -109,4 +109,15 @@ nnoremap <C-n>     <C-o>:tabnext<cr>
 " Maximise win
 nnoremap MM        :ZoomWin<cr>
 
-" TODO: insert a modeline to source this onwrite
+fun! YankParse()
+    let store = 'x'
+
+    exe 'normal! "' .store. 'y'
+    exe 'normal! @' .store
+
+    exe "registers x"
+endfun
+
+vnoremap e         :call YankParse()<cr>
+
+" TODO: insert aemodeline to source this onwrite

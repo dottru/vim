@@ -13,23 +13,25 @@ Bundle 'mattn/gist-vim'
 
 Bundle 'xolox/vim-misc'
 Bundle 'fholgado/minibufexpl.vim'
-Bundle 'Lokaltog/powerline'
 Bundle 'scrooloose/syntastic'
 Bundle 'junegunn/vim-easy-align'
 Bundle 'tpope/vim-markdown'
 Bundle 'airblade/vim-rooter'
-Bundle 'vim-scripts/SideBar.vim'
-Bundle 'vim-scripts/mru.vim'
 Bundle 'jeetsukumaran/vim-buffergator'
 Bundle 'Shougo/neocomplcache'
 Bundle 'tpope/vim-fugitive'
 Bundle 'mhinz/vim-tmuxify'
 Bundle 'dr-chip-vim-scripts/ZoomWin'
+Bundle 'vim-scripts/Mark'
+Bundle 'skammer/vim-css-color'
+Bundle 'Floobits/floobits-vim'
+
 
 " BUNDLES - DISABLED
 " =================
 
 "Bundle 'vim-scripts/Vim-R-plugin'
+"Bundle 'Lokaltog/powerline'
 "Bundle 'tpope/vim-fugitive'
 "Bundle 'nathanaelkane/vim-indent-guides'
 "Bundle 'majutsushi/tagbar'
@@ -49,3 +51,4 @@ Bundle 'dr-chip-vim-scripts/ZoomWin'
 
 " Was causing hella bugs
 " Bundle 'Valloric/YouCompleteMe'
+"
