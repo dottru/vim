@@ -21,8 +21,8 @@ source ~/.vim/bundles.vim
 " =====================================================
 
 " BUNDLE CONFIGS
-"       ~/.vim/vundle.vim                   - Initialises vundle for you
-"       ~/.vim/bundles.vim                  - Loads your specific set of plugins
+"       ~/.vim/vundle.vim                - Initialises vundle for you
+"       ~/.vim/bundles.vim               - Loads your specific set of plugins
 
 " USER CONFIGS
 "       ~/.vim/plugin/style.vim          - Visual settings

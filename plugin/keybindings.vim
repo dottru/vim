@@ -12,18 +12,24 @@
 " =========================
 
 " -- COMMANDS --
-command! Grow  :echom "Use 10gh to expand 10 cols. 5gv to grow 5 rows vert."
-command! Shink :echom "Use 10sh to shrink 10 cols. 5gv to shrink 5 rows vert."
-command! Align :echom "Select a block visually and press <Enter><Space> to align on spaces or <Enter>: to align on colons"
+command!          Grow       :echom "Use 10gh to expand 10 cols. 5gv to grow 5 rows vert."
+command!          Shink      :echom "Use 10sh to shrink 10 cols. 5gv to shrink 5 rows vert."
+command!          Align      :echom "Select a block visually and press
+                                     "   <Enter><Space> to align on spaces 
+                                     "   <Enter>: to align on colons"
+
+                                     
+command! -nargs=1 OpenBrowser :!/usr/bin/open -a Google\ Chrome <args><cr>
+
 
 " -- COMMON ERROR --
 " Kill hilights $$ Shortcuts to Write
-command! Write     :noh<Bar>w! %
-command! W Write
+command! Write     :noh<Bar>:w! %<cr>
+"command! W Write
 command! Q qall
-nnoremap <cr>      :noh<cr>
-nnoremap ww        :Write<cr>
-inoremap ww        <C-o>:Write<cr>
+"nnoremap <cr>      :noh<cr>
+"nnoremap ww         :Write<cr>
+"inoremap ww         <C-o>:Write<cr>
 
 " -- PRESERVE RE-SELECT
 nmap     rs gv
@@ -52,6 +58,7 @@ nnoremap w!! :sudowrite<cr>
 nnoremap <Leader>v <Esc>:echo "This has been remapped to ve (edit), vv (vsp), and vs (horiz)."<cr>
 nnoremap ve :e   $MYVIMRC<cr>
 nnoremap vv :vsp $MYVIMRC<cr>
+
 nnoremap vs :sp  $MYVIMRC<cr>
 
 " -- RAGEQUIT --
@@ -63,7 +70,7 @@ nnoremap bd                 :bd<cr>
 
 " -- HELP --
 inoremap <Leader>h          <Esc>:help 
-nnoremap H              :help 
+nnoremap H                  :help 
 
 "" Convenience shortcuts. C-hjkl for movement 
 nnoremap <C-h> <C-w>h
@@ -79,8 +86,8 @@ inoremap JK  jk
 inoremap KJ  kj
 
 " It confuses my fingers for  to save and return while kj saves and escapes
-inoremap jk  <C-o>:w<cr>
-inoremap kj  <Esc>:w<cr>
+inoremap jk  <C-o>:Write<cr>
+inoremap kj  <Esc>:Write<cr>
 
 " -- JUMPS --
 nnoremap J   <C-d>
@@ -99,14 +106,18 @@ nnoremap <Leader>n :set number!
 nnoremap MM    :only<cr>
 
 " Tab navigation
-nnoremap <C-t>     :tabnew<cr>
-nnoremap <C-p>     :tabprev<cr>
-nnoremap <C-n>     :tabnext<cr>
+nnoremap <C-t>          :tabnew<cr>
+nnoremap <C-p>          :tabprev<cr>
+nnoremap <C-n>          :tabnext<cr>
 inoremap <C-t>     <C-o>:tabnew<cr>
 nnoremap <C-p>     <C-o>:tabprev<cr>
 nnoremap <C-n>     <C-o>:tabnext<cr>
 
+
 " Maximise win
 nnoremap MM        :ZoomWin<cr>
+nnoremap mm        MM
+
+nnoremap ob        :OpenBrowser expand("%:p")<cr>
 
 " TODO: insert a modeline to source this onwrite

@@ -12,7 +12,7 @@ set pastetoggle    = ",p"
  
 " Text wrap width
 let g:textwidth    = 90      " Text wrap width
-let &colorcolumn   = g:textwidth
+" let &colorcolumn   = g:textwidth
 let &textwidth     = g:textwidth
  
 " Auto save files - Auto re-load files
@@ -47,7 +47,7 @@ set ttyfast                 " option for fast terminals
 set scrolloff=10            " Keeps the cursor in view
 
 set ruler                   " Show cursor pos in status
-set cursorline cursorcolumn " Show visual ind. on cursor loc
+set cursorline " cursorcolumn - Show visual ind. on cursor loc
 
 set notimeout ttimeout     " set shortcut combo timeout
 set timeoutlen=500         " basic timeout length in ms
@@ -65,7 +65,7 @@ set wrapmargin=0            " wrap text ${X} characters from edge, horrible sett
 set cmdheight=2             " How tall the command line is
 
 " search opts
-set incsearch hlsearch      " Incremental search / Hilight search
+set incsearch nohlsearch      " Incremental search / Hilight search
 set ignorecase              " Search ignores case
 
 set formatoptions=tcqr      " auto-wrap using textwidth
