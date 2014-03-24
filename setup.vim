@@ -1,3 +1,4 @@
+let g:vimdir       = expand("<sfile>:p:h")
 let g:modfile      = g:vimdir    . "/MODIFIED"
 let g:bundledir    = g:vimdir    . "/bundle"
 let g:vundledir    = g:bundledir . "/vundle"
